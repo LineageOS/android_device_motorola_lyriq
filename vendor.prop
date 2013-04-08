@@ -269,3 +269,5 @@ ro.vendor.mtk_trustonic_tee_support=1
 # WiFi
 ro.vendor.wlan.chrdev=wmt_chrdev_wifi
 ro.vendor.wlan.gen=gen4m_6893
+wifi.interface=wlan0
+wifi.supplicant_scan_interval=15
