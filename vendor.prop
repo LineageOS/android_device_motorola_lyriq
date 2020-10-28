@@ -363,3 +363,6 @@ ro.vendor.wlan.chrdev=wmt_chrdev_wifi
 ro.vendor.wlan.gen=gen4m_6893
 wifi.interface=wlan0
 wifi.supplicant_scan_interval=120
+
+# Zygote
+zygote.critical_window.minute=10
