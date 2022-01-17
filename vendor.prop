@@ -195,6 +195,7 @@ ro.vendor.mtk_data_config=1
 
 # LMK
 ro.lmk.kill_heaviest_task=true
+ro.lmk.kill_timeout_ms=50
 ro.lmk.filecache_min_kb=153600
 
 # Media
