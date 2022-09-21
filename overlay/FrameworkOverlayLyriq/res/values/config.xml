@@ -232,4 +232,6 @@
     <!-- Whether the always on display mode is available. This also
          allows the device to display doze screen with pulsing effect -->
     <bool name="config_dozePulsePickup">true</bool>
+    <!-- Type of the double tap sensor. Empty if double tap is not supported. -->
+    <string name="config_dozeDoubleTapSensorType" translatable="false">org.lineageos.sensor.double_tap</string>
 </resources>
