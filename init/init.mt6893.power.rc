@@ -80,6 +80,9 @@ on property:sys.boot_completed=1
     # PowerHAL Hint Processing
     setprop vendor.powerhal.init 1
 
+    # Adjust watermark level
+    write /proc/sys/vm/watermark_scale_factor 200
+
     # End boot time tuning
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "performance"
     write /sys/devices/system/cpu/cpufreq/policy4/scaling_governor "performance"
