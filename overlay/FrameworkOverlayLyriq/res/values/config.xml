@@ -223,4 +223,7 @@
     <bool name="config_unplugTurnsOnScreen">true</bool>
     <!-- The amount to scale fullscreen snapshots for Overview and snapshot starting windows. -->
     <item name="config_highResTaskSnapshotScale" format="float" type="dimen">0.7</item>
+    <!-- Whether the always on display mode is available. This also
+         allows the device to display doze screen with pulsing effect -->
+    <bool name="config_dozePulsePickup">true</bool>
 </resources>
