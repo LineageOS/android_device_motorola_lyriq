@@ -192,7 +192,8 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, hardware/mediatek/overlay/mssi.mk)
 
 PRODUCT_PACKAGES += \
-    FrameworkOverlayLyriq
+    FrameworkOverlayLyriq \
+    SettingsOverlayLyriq
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
