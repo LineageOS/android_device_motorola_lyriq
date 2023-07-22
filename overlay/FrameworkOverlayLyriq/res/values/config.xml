@@ -219,4 +219,6 @@
 
     <!-- Whether this device is supporting the camera toggle -->
     <bool name="config_supportsCamToggle">true</bool>
+    <!-- Whether the display should turn on when a plug/unplug event occurs -->
+    <bool name="config_unplugTurnsOnScreen">true</bool>
 </resources>
