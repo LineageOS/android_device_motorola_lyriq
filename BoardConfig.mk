@@ -125,6 +125,9 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 VENDOR_SECURITY_PATCH := 2026-08-01
 BOOT_SECURITY_PATCH := $(VENDOR_SECURITY_PATCH)
 
+# SELinux
+include device/mediatek/sepolicy_vndr/SEPolicy.mk
+
 # VINTF
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 
