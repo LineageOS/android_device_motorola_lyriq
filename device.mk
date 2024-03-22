@@ -36,6 +36,14 @@ PRODUCT_PACKAGES += \
     update_engine_sideload \
     update_verifier
 
+# Bootcontrol
+PRODUCT_PACKAGES += \
+    com.android.hardware.boot \
+    android.hardware.boot-service.default_recovery
+
+# Partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
 # Platform
 TARGET_BOARD_PLATFORM := mt6893
 
