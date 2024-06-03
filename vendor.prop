@@ -194,6 +194,7 @@ persist.radio.is_vonr_enabled_1=true
 ro.vendor.mtk_data_config=1
 
 # LMK
+ro.lmk.kill_heaviest_task=true
 ro.lmk.filecache_min_kb=153600
 
 # Media
