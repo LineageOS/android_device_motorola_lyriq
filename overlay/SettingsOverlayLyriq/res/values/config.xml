@@ -6,4 +6,6 @@
 <resources>
     <!-- Whether to show Smooth Display feature in Settings Options -->
     <bool name="config_show_smooth_display">true</bool>
+    <!-- Whether to show battery cycle count in settings -->
+    <bool name="config_show_battery_cycle_count">true</bool>
 </resources>
