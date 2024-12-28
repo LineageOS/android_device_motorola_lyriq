@@ -214,4 +214,9 @@
     <string name="config_mainBuiltInDisplayCutout" translatable="false">M 36,0 L -36,0 L -26,106 L 26,106 Z</string>
     <!-- Controls whether the display spaces should be allowed to rotate to 180 degrees. -->
     <bool name="config_allowAllRotations">true</bool>
+    <!-- Whether this device is supporting the software microphone toggle -->
+    <bool name="config_supportsMicToggle">true</bool>
+
+    <!-- Whether this device is supporting the camera toggle -->
+    <bool name="config_supportsCamToggle">true</bool>
 </resources>
