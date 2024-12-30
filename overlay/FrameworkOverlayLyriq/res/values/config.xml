@@ -221,4 +221,6 @@
     <bool name="config_supportsCamToggle">true</bool>
     <!-- Whether the display should turn on when a plug/unplug event occurs -->
     <bool name="config_unplugTurnsOnScreen">true</bool>
+    <!-- The amount to scale fullscreen snapshots for Overview and snapshot starting windows. -->
+    <item name="config_highResTaskSnapshotScale" format="float" type="dimen">0.7</item>
 </resources>
