@@ -1,3 +1,5 @@
+rw_dir_file(vendor_init, sysfs_ged)
+
 # Mot props
 set_prop(vendor_init, vendor_mot_prop)
 
