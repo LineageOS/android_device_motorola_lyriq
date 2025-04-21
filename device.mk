@@ -41,6 +41,11 @@ PRODUCT_PACKAGES += \
     com.android.hardware.boot \
     android.hardware.boot-service.default_recovery
 
+# Health
+PRODUCT_PACKAGES += \
+    android.hardware.health-service.example \
+    android.hardware.health-service.example_recovery
+
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
