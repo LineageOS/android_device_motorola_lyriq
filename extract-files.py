@@ -23,6 +23,7 @@ from extract_utils.main import (
 namespace_imports = [
     'device/motorola/lyriq',
     'hardware/mediatek',
+    'hardware/mediatek/libmtkperf_client',
     'hardware/motorola',
 ]
 

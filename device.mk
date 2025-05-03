@@ -210,6 +210,20 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 # Platform
 TARGET_BOARD_PLATFORM := mt6893
 
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power-service.pixel-libperfmgr \
+    vendor.mediatek.hardware.mtkpower@1.2-service.stub
+
+PRODUCT_PACKAGES += \
+    init.mt6893.power.rc
+
+PRODUCT_PACKAGES += \
+    libmtkperf_client_vendor
+
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
 
@@ -256,8 +270,10 @@ PRODUCT_SHIPPING_API_LEVEL := 35
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH) \
     hardware/motorola \
+    hardware/mediatek/libmtkperf_client \
     hardware/mediatek \
-    hardware/google/pixel \
+    hardware/google/pixel/pixelstats \
+    hardware/google/pixel/power-libperfmgr \
     hardware/google/interfaces
 
 # Thermal
