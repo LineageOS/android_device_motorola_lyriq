@@ -130,6 +130,8 @@ include device/mediatek/sepolicy_vndr/SEPolicy.mk
 
 # VINTF
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+    hardware/mediatek/vintf/mediatek_framework_compatibility_matrix.xml
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
