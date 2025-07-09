@@ -165,7 +165,11 @@ PRODUCT_PACKAGES += \
     init.oem.hw.sh \
     init.project.rc \
     init.sensor_2_0.rc \
-    ueventd.mt6893.rc
+    ueventd.mt6893.rc \
+    init.zram.rc
+
+PRODUCT_COPY_FILES += \
+    hardware/google/pixel/mm/fstab.zram.40p:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.zram
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/init/fstab.mt6893:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.mt6893
