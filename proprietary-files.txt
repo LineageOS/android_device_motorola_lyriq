@@ -215,3 +215,20 @@ vendor/etc/aurisys_config.xml
 vendor/etc/aurisys_config_hifi3.xml
 vendor/etc/aurisys_config_hifi3_B100.xml
 vendor/etc/aurisys_config_rv.xml
+
+# Bluetooth
+vendor/etc/init/init.bt_drv.rc
+vendor/lib64/libbluetooth_mtk.so
+vendor/lib64/libbluetooth_mtk_pure.so
+vendor/lib64/libbt-vendor.so
+
+# Bluetooth (A2DP)
+vendor/etc/vintf/manifest/bluetooth_audio.xml:vendor/etc/vintf/manifest/bluetooth_audio_mtk.xml
+vendor/lib64/android.hardware.bluetooth.audio-impl-mediatek.so
+vendor/lib64/libbluetooth_audio_session_aidl_mtk.so
+vendor/lib64/vendor.mediatek.hardware.bluetooth.audio-V1-ndk.so
+
+# Bluetooth (Firmware)
+vendor/firmware/BT_FW.cfg
+vendor/firmware/soc7_0_ram_bt_1_1_hdr.bin
+vendor/firmware/soc7_0_ram_bt_1a_1_hdr.bin
