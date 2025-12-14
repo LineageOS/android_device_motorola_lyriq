@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- Max depth blur radius in pixels. If 0, background blur will be disabled in overview. -->
+    <dimen name="max_depth_blur_radius">17dp</dimen>
+</resources>

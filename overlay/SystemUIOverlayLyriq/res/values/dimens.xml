@@ -16,4 +16,6 @@
     <dimen name="rounded_corner_content_padding">24px</dimen>
 
     <dimen name="keyguard_indication_margin_bottom">6dp</dimen>
+    <!-- Blur radius behind Notification Shade -->
+    <dimen name="max_shade_window_blur_radius">17dp</dimen>
 </resources>
