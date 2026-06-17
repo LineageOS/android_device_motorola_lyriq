@@ -265,6 +265,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
+# Properties
+include hardware/mediatek/configs/properties/vendor_logtag.mk
+
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
 
