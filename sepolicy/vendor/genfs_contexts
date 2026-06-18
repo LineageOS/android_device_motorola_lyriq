@@ -1,0 +1,44 @@
+# Extcon
+genfscon sysfs /devices/platform/extcon_usb/extcon/extcon0/cable.0/name                          u:object_r:sysfs_extcon:s0
+genfscon sysfs /devices/platform/extcon_usb/extcon/extcon0/cable.1/name                          u:object_r:sysfs_extcon:s0
+
+# Graphics
+genfscon sysfs /devices/platform/soc/13000000.mali/js_ctx_scheduling_mode                            u:object_r:sysfs_gpu:s0
+genfscon sysfs /devices/platform/soc/13000000.mali/js_scheduling_period                              u:object_r:sysfs_gpu:s0
+genfscon sysfs /devices/platform/soc/13000000.mali/dvfs_period                                       u:object_r:sysfs_gpu:s0
+
+# Input Devices
+genfscon sysfs /devices/virtual/input u:object_r:vendor_sysfs_input:s0
+
+# Motorola Specific filesystem entries
+genfscon proc /bootinfo u:object_r:vendor_proc_hw:s0
+genfscon proc /config u:object_r:vendor_proc_hw:s0
+genfscon proc /hw u:object_r:vendor_proc_hw:s0
+
+# Touchpanel
+genfscon sysfs /class/touchscreen u:object_r:vendor_sysfs_touchpanel:s0
+genfscon sysfs /devices/virtual/touchscreen u:object_r:vendor_sysfs_touchpanel:s0
+
+# Wakeup (https://lkml.org/lkml/2019/8/6/1275)
+genfscon sysfs /devices/platform/10026000.pwrap/10026000.pwrap:mt6359p/mt6359p-rtc/rtc/rtc0/alarmtimer.5.auto/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/battery-manager/power_supply/battery/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/charger/power_supply/mtk-mst-hvdiv-chg/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/charger/power_supply/mtk-slv-hvdiv-chg/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/10027000.spmi/spmi-0/0-03/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/10027000.spmi/spmi-0/0-06/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/10027000.spmi/spmi-0/0-07/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/10800000.adsp_common/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11010000.spi1/spi_master/spi1/spi1.0/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11013000.spi3/spi_master/spi3/spi3.0/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11015000.i2c/i2c-0/0-0055/power_supply/bms/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11015000.i2c/i2c-0/0-0055/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11d02000.i2c/i2c-4/4-0028/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11d02000.i2c/i2c-4/4-0038/power_supply/wireless/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11d03000.i2c/i2c-7/7-0065/power_supply/cp-master/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11d03000.i2c/i2c-7/7-0067/power_supply/cp-slave/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11f00000.i2c/i2c-5/5-0034/mt6360-chg.1.auto/power_supply/primary_chg/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11f00000.i2c/i2c-5/5-0034/mt6360-chg.1.auto/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11f00000.i2c/i2c-5/5-0034/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11f00000.i2c/i2c-5/5-004e/tcpc/type_c_port0/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11f00000.i2c/i2c-5/5-004e/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/18000000.consys/wakeup u:object_r:sysfs_wakeup:s0

@@ -1,0 +1,42 @@
+# Camera
+/data/vendor/camera(/.*)?                                                              u:object_r:vendor_camera_data_file:s0
+/data/vendor/misc/imager(/.*)?                                                         u:object_r:vendor_imager_data_file:s0
+/data/vendor/misc/imager/metadata(/.*)?                                                u:object_r:vendor_imager_metadata_file:s0
+/data/vendor/misc/imager                                                               u:object_r:vendor_camera_data_file:s0
+/mnt/vendor/persist/camera(/.*)?                                                       u:object_r:vendor_persist_camera_file:s0
+/vendor/bin/hw/motorola\.hardware\.camera\.imgtuner\.aidl-service                      u:object_r:hal_camera_default_exec:s0
+
+# Fingerprint
+/data/vendor/.fps(/.*)?                                                                     u:object_r:fingerprint_vendor_data_file:s0
+/data/vendor/gf_data(/.*)?                                                                  u:object_r:fingerprint_vendor_data_file:s0
+/mnt/vendor/persist/fps(/.*)?                                                               u:object_r:vendor_persist_fingerprint_file:s0
+/mnt/vendor/persist/goodix(/.*)?                                                            u:object_r:vendor_persist_fingerprint_file:s0
+/vendor/bin/hw/android\.hardware\.biometrics\.fingerprint-service\.motorola                 u:object_r:hal_fingerprint_default_exec:s0
+
+# Mobicore TEE
+/mnt/vendor/tzapp(/.*)? u:object_r:mnt_vendor_trustlet_file:s0
+/mnt/vendor/persist/mobicore(/.*)?        u:object_r:persist_mobicore_data_file:s0
+
+# Motobox
+/vendor/bin/motobox    u:object_r:vendor_motobox_exec:s0
+
+# Neural Networks
+/vendor/lib(64)?/libapusys\.so                                                         u:object_r:same_process_hal_file:s0
+
+# Power
+/(vendor|system/vendor)/bin/hw/android\.hardware\.power-service\.pixel-libperfmgr u:object_r:hal_power_default_exec:s0
+
+# Vendor init scripts
+/vendor/bin/init\.mmi\.boot\.sh                    u:object_r:vendor_moto_init_shell_exec:s0
+/vendor/bin/init\.oem\.hw\.sh                      u:object_r:vendor_moto_init_shell_exec:s0
+/vendor/bin/hardware_revisions\.sh                 u:object_r:vendor_moto_init_shell_exec:s0
+/vendor/bin/init\.mmi\.backup\.trustlet\.sh        u:object_r:vendor_moto_init_shell_exec:s0
+/vendor/bin/init\.mmi\.block_perm\.sh              u:object_r:vendor_moto_init_shell_exec:s0
+/vendor/bin/init\.mmi\.touch\.sh                   u:object_r:vendor_moto_init_shell_exec:s0
+/vendor/bin/vendor\.mmi\.cxp\.sh                   u:object_r:vendor_moto_init_shell_exec:s0
+/vendor/bin/init\.modprobe\.sh                     u:object_r:vendor_modinstall-sh_exec:s0
+
+# Wakeups
+/sys/devices/platform/soc/[^*]+/wakeup/wakeup[0-9]+(/.*)?                              u:object_r:sysfs_wakeup:s0
+/sys/devices/virtual/input/input[0-9]+/wakeup[0-9]+(/.*)?                              u:object_r:sysfs_wakeup:s0
+/sys/devices/virtual/misc/[^*]+/wakeup[0-9]+(/.*)?                                     u:object_r:sysfs_wakeup:s0
