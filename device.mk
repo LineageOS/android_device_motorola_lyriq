@@ -238,7 +238,8 @@ PRODUCT_PACKAGES += \
     SettingsOverlayLyriq \
     SystemUIOverlayLyriq \
     Launcher3DeviceOverlay \
-    EuiccOverlayLyriq
+    EuiccOverlayLyriq \
+    NfcOverlayLyriq
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
