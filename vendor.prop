@@ -167,6 +167,9 @@ ro.vendor.mtk_prefer_64bit_proc=0
 drm.service.enabled=true
 ro.netflix.bsp_rev=MTK6893-32816-1
 
+# FRP
+ro.frp.pst=/dev/block/by-name/frp
+
 # Gatekeeper
 ro.hardware.gatekeeper=trustonic
 
