@@ -79,3 +79,7 @@ vendor.camera.mdp.dre.enable=1
 vendor.camera.mot.jpegmaxscaleratio=2.5
 vendor.camera.vidhance.IHCon=0
 vendor.mtk.camera.app.fd.video=1
+
+# DRM
+drm.service.enabled=true
+ro.netflix.bsp_rev=MTK6893-32816-1

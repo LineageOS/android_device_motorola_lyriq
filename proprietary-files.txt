@@ -736,3 +736,9 @@ vendor/etc/vhw.xml
 
 # Camera firmware
 vendor/firmware/lib3a.ccu
+
+# DRM (Widevine)
+vendor/apex/com.google.android.widevine.nonupdatable.apex
+vendor/lib64/mediadrm/libdrmclearkeyplugin.so
+vendor/lib64/mediadrm/libmockdrmcryptoplugin.so
+vendor/lib64/liboemcrypto.so
