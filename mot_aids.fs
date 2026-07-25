@@ -73,6 +73,9 @@ value: 5019
 [AID_VENDOR_MOT_MOD]
 value: 5020
 
+[AID_VENDOR_APUSYS]
+value: 5200
+
 [AID_VENDOR_MOT_SHARED]
 value: 5323
 
