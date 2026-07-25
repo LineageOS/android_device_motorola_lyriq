@@ -34,10 +34,10 @@ lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     (
         'libneuron_graph_delegate.mtk',
-        'vendor.mediatek.hardware.videotelephony-V1-ndk',
         'vendor.mediatek.hardware.apuware.xrp-V1-ndk',
         'vendor.mediatek.hardware.apuware.utils-V1-ndk',
         'vendor.mediatek.hardware.apuware.apusys-V5-ndk',
+        'vendor.mediatek.hardware.videotelephony-V1-ndk.so',
     ): lib_fixup_vendor_suffix,
 }
 

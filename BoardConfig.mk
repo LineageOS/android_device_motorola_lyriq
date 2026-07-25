@@ -120,6 +120,7 @@ BOARD_USES_METADATA_PARTITION := true
 
 # Properties
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+TARGET_PRODUCT_PROP += $(DEVICE_PATH)/system.prop
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2026-08-01

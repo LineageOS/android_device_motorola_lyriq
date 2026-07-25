@@ -174,6 +174,10 @@
         <fqname>IPictureQuality_AIDL/default</fqname>
     </hal>
     <hal format="aidl">
+        <name>vendor.mediatek.hardware.videotelephony</name>
+        <fqname>IVideoTelephony/default</fqname>
+    </hal>
+    <hal format="aidl">
         <name>android.hardware.security.keymint</name>
         <version>3</version>
         <fqname>IRemotelyProvisionedComponent/default</fqname>
