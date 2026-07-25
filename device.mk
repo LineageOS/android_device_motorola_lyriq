@@ -206,7 +206,8 @@ PRODUCT_PACKAGES += \
     FrameworkOverlayLyriq \
     SettingsOverlayLyriq \
     SystemUIOverlayLyriq \
-    Launcher3DeviceOverlay
+    Launcher3DeviceOverlay \
+    EuiccOverlayLyriq
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true

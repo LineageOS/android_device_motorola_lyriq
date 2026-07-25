@@ -861,6 +861,11 @@ vendor/lib64/mediadrm/libdrmclearkeyplugin.so
 vendor/lib64/mediadrm/libmockdrmcryptoplugin.so
 vendor/lib64/liboemcrypto.so
 
+# Euicc
+product/app/EuiccPartnerApp/EuiccPartnerApp.apk;PRESIGNED
+product/etc/permissions/privapp-permissions-com.google.android.euicc.xml
+product/priv-app/EuiccGoogle/EuiccGoogle.apk;PRESIGNED
+
 # Gatekeeper
 vendor/bin/hw/android.hardware.gatekeeper-service.trustonic
 vendor/etc/init/android.hardware.gatekeeper-service.trustonic.rc
