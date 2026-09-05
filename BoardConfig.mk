@@ -131,6 +131,14 @@ BOOT_SECURITY_PATCH := $(VENDOR_SECURITY_PATCH)
 # SELinux
 include device/mediatek/sepolicy_vndr/SEPolicy.mk
 
+# SKU
+ODM_MANIFEST_SKUS += b d bn de dn
+ODM_MANIFEST_B_FILES := $(DEVICE_PATH)/sku/manifest_b.xml
+ODM_MANIFEST_D_FILES := $(DEVICE_PATH)/sku/manifest_d.xml
+ODM_MANIFEST_BN_FILES := $(DEVICE_PATH)/sku/manifest_bn.xml
+ODM_MANIFEST_DE_FILES := $(DEVICE_PATH)/sku/manifest_de.xml
+ODM_MANIFEST_DN_FILES := $(DEVICE_PATH)/sku/manifest_dn.xml
+
 # VINTF
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
