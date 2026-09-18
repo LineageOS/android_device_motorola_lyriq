@@ -26,13 +26,6 @@ index ad44db15..61233291 100644
          <receiver android:exported="true" android:name="com.mediatek.ims.MotoDialerReceiver" android:permission="android.permission.READ_PRIVILEGED_PHONE_STATE">
              <intent-filter>
                  <action android:name="com.motorola.internal.intent.action.USER_OPEN_MISSED_CALL"/>
-@@ -93,4 +95,4 @@
-             </intent-filter>
-         </receiver>
-     </application>
--</manifest>
-\ No newline at end of file
-+</manifest>
 -- 
 2.53.0
 
