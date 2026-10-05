@@ -1086,3 +1086,22 @@ vendor/firmware/aw8622x_rtp_Zero_Hour.bin
 # VPU
 vendor/lib64/libmvpu_config_data.so
 vendor/lib64/libmvpu_wrapper.so
+
+# WiFi
+vendor/bin/netdagent
+vendor/etc/init/netdagent.rc
+vendor/etc/init/init.wlan_drv.rc
+vendor/etc/vintf/manifest/CommandService.xml
+vendor/lib64/libwapi.so
+vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so;FIX_SONAME
+vendor/lib64/libwifical.so
+vendor/lib64/libwifinvram.so
+vendor/lib64/libwifinvramdata.so
+vendor/lib64/libwpa_client.so
+vendor/lib64/vendor.mediatek.hardware.netdagent-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.netdagent@1.0.so
+
+# WiFi (Firmware)
+vendor/firmware/WIFI_RAM_CODE_soc3_0_1a_1.bin
+vendor/firmware/txpowerctrl.cfg
+vendor/firmware/wifi.cfg
