@@ -2,6 +2,12 @@
 ## are from moto edge 40 (lyriq_g-user 15 V1TLS35.73-60-3-14 89e5f).
 ## variant: RETAIL
 
+# AAL
+vendor/lib64/libaal_cust.so
+vendor/lib64/libaal_key.so
+vendor/lib64/libaal_sec.so
+vendor/lib64/libaalservice.so
+
 # Audio
 system/lib64/av-audio-types-aidl-V1-ndk.so
 system_ext/bin/hw/android.hardware.audio.parameter_parser.service
