@@ -880,6 +880,18 @@ vendor/bin/hw/vendor.mediatek.hardware.mms-service
 vendor/etc/init/vendor.mediatek.hardware.mms-service.rc
 vendor/lib64/vendor.mediatek.hardware.mms-V1-ndk.so
 
+# NVRAM
+vendor/bin/hw/vendor.mediatek.hardware.nvram-service
+vendor/bin/nvram_daemon
+vendor/etc/init/nvram_daemon.rc
+vendor/etc/init/vendor.mediatek.hardware.nvram-sevice.rc
+vendor/lib64/hw/vendor.mediatek.hardware.nvram-impl.so
+vendor/lib64/libcustom_nvram.so
+vendor/lib64/libfile_op.so
+vendor/lib64/libnvram.so
+vendor/lib64/libnvram_sec.so
+vendor/lib64/vendor.mediatek.hardware.nvram-V1-ndk.so
+
 # Sensors
 vendor/lib64/hw/sensors.mediatek.V2.0.so
 vendor/lib64/hw/sensors.mt6893.so
