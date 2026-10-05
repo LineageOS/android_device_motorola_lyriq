@@ -13,5 +13,9 @@ TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := cortex-a76
 
+# Bootloader
+TARGET_BOOTLOADER_BOARD_NAME := lyriq
+TARGET_NO_BOOTLOADER := true
+
 # Inherit the proprietary files
 include vendor/motorola/lyriq/BoardConfigVendor.mk

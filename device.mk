@@ -6,6 +6,9 @@
 
 DEVICE_PATH := device/motorola/lyriq
 
+# Platform
+TARGET_BOARD_PLATFORM := mt6893
+
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 35
 
