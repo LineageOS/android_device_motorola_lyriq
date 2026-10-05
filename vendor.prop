@@ -214,6 +214,11 @@ ro.vendor.pq.mtk_blulight_def_support=1
 ro.vendor.pq.mtk_smart_bluelight_def_support=0
 ro.vendor.pq.mtk_smart_true_tone_support=0
 
+# Sensors
+ro.vendor.hw.fps=true
+ro.vendor.mtk.sensor.support=yes
+ro.vendor.sensors.mot_ltv=true
+
 # SurfaceFlinger
 debug.sf.auto_latch_unsignaled=1
 debug.sf.enable_gl_backpressure=false

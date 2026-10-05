@@ -845,3 +845,13 @@ vendor/lib64/liboemcrypto.so
 vendor/bin/hw/android.hardware.gatekeeper-service.trustonic
 vendor/etc/init/android.hardware.gatekeeper-service.trustonic.rc
 vendor/etc/vintf/manifest/android.hardware.gatekeeper-service.trustonic.xml
+
+# Sensors
+vendor/lib64/hw/sensors.mediatek.V2.0.so
+vendor/lib64/hw/sensors.mt6893.so
+vendor/lib64/libhfmanager.so
+vendor/lib64/libhfmanagerwrapper.so
+vendor/lib64/libhwm.so
+vendor/lib64/libksensor.so
+vendor/lib64/libsensor_custom.so
+vendor/lib64/sensors.moto.so
