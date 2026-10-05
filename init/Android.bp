@@ -1,0 +1,94 @@
+//
+// SPDX-FileCopyrightText: LineageOS
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+sh_binary {
+    name: "init.oem.hw.sh",
+    src: "init.oem.hw.sh",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "fstab.mt6893",
+    src: "fstab.mt6893",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.connectivity.rc",
+    src: "init.connectivity.rc",
+    relative_install_path: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.connectivity.common.rc",
+    src: "init.connectivity.common.rc",
+    relative_install_path: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init_conninfra.rc",
+    src: "init_conninfra.rc",
+    relative_install_path: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.recovery.mt6893.rc",
+    src: "init.recovery.mt6893.rc",
+    relative_install_path: "init",
+    recovery: true,
+}
+
+prebuilt_etc {
+    name: "init.mmi.rc",
+    src: "init.mmi.rc",
+    relative_install_path: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.mmi.overlay.rc",
+    src: "init.mmi.overlay.rc",
+    relative_install_path: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.mt6893.rc",
+    src: "init.mt6893.rc",
+    relative_install_path: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.mtkgki.rc",
+    src: "init.mtkgki.rc",
+    relative_install_path: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.project.rc",
+    src: "init.project.rc",
+    relative_install_path: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.sensor_2_0.rc",
+    src: "init.sensor_2_0.rc",
+    relative_install_path: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "ueventd.mt6893.rc",
+    filename: "ueventd.rc",
+    src: "ueventd.mt6893.rc",
+    vendor: true,
+}

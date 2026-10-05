@@ -141,6 +141,25 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.vulkan.deqp.level-2023-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml \
     frameworks/native/data/etc/android.software.opengles.deqp.level-2023-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.opengles.deqp.level.xml
 
+# Init
+PRODUCT_PACKAGES += \
+    fstab.mt6893 \
+    init.connectivity.rc \
+    init.connectivity.common.rc \
+    init_conninfra.rc \
+    init.mmi.rc \
+    init.mmi.overlay.rc \
+    init.recovery.mt6893.rc \
+    init.mt6893.rc \
+    init.mtkgki.rc \
+    init.oem.hw.sh \
+    init.project.rc \
+    init.sensor_2_0.rc \
+    ueventd.mt6893.rc
+
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/init/fstab.mt6893:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.mt6893
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health-service.example \
