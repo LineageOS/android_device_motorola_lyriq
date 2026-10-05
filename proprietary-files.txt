@@ -952,6 +952,9 @@ vendor/bin/hw/vendor.mediatek.hardware.mms-service
 vendor/etc/init/vendor.mediatek.hardware.mms-service.rc
 vendor/lib64/vendor.mediatek.hardware.mms-V1-ndk.so
 
+# Native public libraries
+vendor/etc/public.libraries.txt
+
 # NVRAM
 vendor/bin/hw/vendor.mediatek.hardware.nvram-service
 vendor/bin/nvram_daemon
