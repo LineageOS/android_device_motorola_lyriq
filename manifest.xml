@@ -1,5 +1,10 @@
 <manifest version="8.0" type="device" target-level="6">
     <hal format="aidl">
+        <name>android.hardware.camera.provider</name>
+        <version>3</version>
+        <fqname>ICameraProvider/internal/0</fqname>
+    </hal>
+    <hal format="aidl">
         <name>android.hardware.soundtrigger3</name>
         <version>2</version>
         <fqname>ISoundTriggerHw/default</fqname>
@@ -7,5 +12,17 @@
     <hal format="aidl">
         <name>vendor.mediatek.hardware.audio</name>
         <fqname>IMtkAudio/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.mediatek.hardware.camera.atms</name>
+        <fqname>IATMs/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.mediatek.hardware.camera.bgservice</name>
+        <fqname>IBGService/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.mediatek.hardware.camera.isphal</name>
+        <fqname>IISPModule/internal/1</fqname>
     </hal>
 </manifest>

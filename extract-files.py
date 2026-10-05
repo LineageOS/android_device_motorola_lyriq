@@ -48,6 +48,12 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libaudio_aidl_conversion_common_ndk.so', 'libaudio_aidl_conversion_common_ndk_prebuilt.so'),
     'vendor/lib64/hw/audio.primary.mt6893.so': blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
+    ('vendor/lib64/vendor.mediatek.hardware.camera.isphal-V1-ndk.so', 'vendor/lib64/libmtkcam_grallocutils.so'): blob_fixup()
+        .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
+    'vendor/lib64/libmtkcam_hal_aidl_common.so': blob_fixup()
+        .replace_needed('android.hardware.camera.common-V2-ndk.so', 'android.hardware.camera.common-V1-ndk.so'),
+    'vendor/lib64/libcam.utils.sensorprovider.so': blob_fixup()
+        .replace_needed('android.hardware.sensors-V2-ndk.so', 'android.hardware.sensors-V3-ndk.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
