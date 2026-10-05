@@ -167,6 +167,16 @@ ro.netflix.bsp_rev=MTK6893-32816-1
 # Gatekeeper
 ro.hardware.gatekeeper=trustonic
 
+# Media
+debug.stagefright.c2inputsurface=-1
+media.c2.dmabuf.padding=3072
+media.c2.hal.selection=aidl
+ro.vendor.jpeg_decode_sw_opt=1
+ro.vendor.mtk_sec_video_path_support=1
+ro.vendor.mtk_tee_gp_support=1
+vendor.mtk.vdec.decode.error.handle.mode=3
+vendor.mtk.vdec.waitkeyframeforplay=11
+
 # Picture Quality
 debug.mediatek.appgamepq_compress=1
 debug.mediatek.disp_decompress=1

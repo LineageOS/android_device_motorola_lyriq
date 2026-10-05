@@ -236,8 +236,8 @@ vendor/lib64/vendor.mediatek.hardware.bluetooth.audio-V1-ndk.so
 
 # Bluetooth (Firmware)
 vendor/firmware/BT_FW.cfg
-vendor/firmware/soc7_0_ram_bt_1_1_hdr.bin
-vendor/firmware/soc7_0_ram_bt_1a_1_hdr.bin
+vendor/firmware/soc3_0_ram_bt_1_1_hdr.bin
+vendor/firmware/soc3_0_ram_bt_1a_1_hdr.bin
 
 # Camera
 vendor/bin/hw/camerahalserver
@@ -845,6 +845,26 @@ vendor/lib64/liboemcrypto.so
 vendor/bin/hw/android.hardware.gatekeeper-service.trustonic
 vendor/etc/init/android.hardware.gatekeeper-service.trustonic.rc
 vendor/etc/vintf/manifest/android.hardware.gatekeeper-service.trustonic.xml
+
+# Media
+vendor/bin/hw/android.hardware.media.c2-mediatek-64b:vendor/bin/hw/android.hardware.media.c2-mediatek
+vendor/etc/init/android.hardware.media.c2-mediatek.rc
+vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-extended-seccomp-policy
+vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-mediatek-seccomp-policy
+vendor/etc/vintf/manifest/vendor.dolby.media.c2-default-service-dax.xml:vendor/etc/vintf/manifest/manifest_media_c2_default.xml
+vendor/lib64/libbwc.so
+vendor/lib64/libvcodec_oal.so
+vendor/lib64/libvcodecdrv_header_stub.so
+vendor/lib64/libcodec2_fsr.so
+vendor/lib64/libcodec2_mtk_c2store.so
+vendor/lib64/libcodec2_mtk_vdec.so
+vendor/lib64/libcodec2_mtk_venc.so
+vendor/lib64/libcodec2_vpp_fa_plugin.so
+vendor/lib64/libcodec2_vpp_mi_plugin.so
+vendor/lib64/libcodec2_vpp_qt_plugin.so
+vendor/lib64/libcodec2_vpp_rs_plugin.so
+vendor/lib64/libformatter.so
+vendor/lib64/mt6893/libmtk_drvb.so;SYMLINK=vendor/lib64/libmtk_drvb.so
 
 # Sensors
 vendor/lib64/hw/sensors.mediatek.V2.0.so
