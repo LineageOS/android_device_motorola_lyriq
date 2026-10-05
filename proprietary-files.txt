@@ -931,3 +931,7 @@ vendor/firmware/aw8622x_rtp_Sparse.bin
 vendor/firmware/aw8622x_rtp_Terrabytes.bin
 vendor/firmware/aw8622x_rtp_Verizon_Airwaves.bin
 vendor/firmware/aw8622x_rtp_Zero_Hour.bin
+
+# VPU
+vendor/lib64/libmvpu_config_data.so
+vendor/lib64/libmvpu_wrapper.so
