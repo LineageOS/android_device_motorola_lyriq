@@ -167,6 +167,12 @@ ro.netflix.bsp_rev=MTK6893-32816-1
 # Gatekeeper
 ro.hardware.gatekeeper=trustonic
 
+# GPS
+ro.vendor.gps.chrdev=gps_drv_dl_v010
+ro.vendor.mtk_agps_app=1
+ro.vendor.mtk_gps_support=1
+ro.vendor.mtk_log_hide_gps=1
+
 # Media
 debug.stagefright.c2inputsurface=-1
 media.c2.dmabuf.padding=3072
