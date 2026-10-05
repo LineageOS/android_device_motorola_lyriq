@@ -65,6 +65,12 @@ TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 
 BOARD_USES_METADATA_PARTITION := true
 
+# Properties
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+
+# VINTF
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
+
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3

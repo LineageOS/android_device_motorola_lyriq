@@ -1,0 +1,11 @@
+<manifest version="8.0" type="device" target-level="6">
+    <hal format="aidl">
+        <name>android.hardware.soundtrigger3</name>
+        <version>2</version>
+        <fqname>ISoundTriggerHw/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.mediatek.hardware.audio</name>
+        <fqname>IMtkAudio/default</fqname>
+    </hal>
+</manifest>
