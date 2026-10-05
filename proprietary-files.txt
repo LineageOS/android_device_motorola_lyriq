@@ -846,6 +846,15 @@ vendor/bin/hw/android.hardware.gatekeeper-service.trustonic
 vendor/etc/init/android.hardware.gatekeeper-service.trustonic.rc
 vendor/etc/vintf/manifest/android.hardware.gatekeeper-service.trustonic.xml
 
+# Keymint
+vendor/bin/hw/android.hardware.security.keymint@3.0-service.trustonic_norkp
+vendor/etc/init/android.hardware.security.keymint@3.0-service.trustonic_norkp.rc
+vendor/etc/vintf/manifest/android.hardware.security.keymint-service.trustonic_norkp.xml
+vendor/etc/vintf/manifest/android.hardware.security.secureclock-service.trustonic.xml
+vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.trustonic.xml
+vendor/lib64/libdecrypt.so
+vendor/lib64/libkmsetkey.so
+
 # Media
 vendor/bin/hw/android.hardware.media.c2-mediatek-64b:vendor/bin/hw/android.hardware.media.c2-mediatek
 vendor/etc/init/android.hardware.media.c2-mediatek.rc
