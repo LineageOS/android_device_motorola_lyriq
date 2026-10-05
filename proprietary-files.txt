@@ -935,6 +935,18 @@ vendor/lib64/libcodec2_vpp_rs_plugin.so
 vendor/lib64/libformatter.so
 vendor/lib64/mt6893/libmtk_drvb.so;SYMLINK=vendor/lib64/libmtk_drvb.so
 
+# Motorola (scripts)
+vendor/bin/motobox;SYMLINK=vendor/bin/expat
+vendor/bin/hardware_revisions.sh
+vendor/bin/init.mmi.backup.trustlet.sh
+vendor/bin/init.mmi.block_perm.sh
+vendor/bin/init.mmi.boot.sh
+vendor/bin/init.mmi.shutdown.sh
+vendor/bin/init.mmi.touch.sh
+vendor/bin/init.mmi.attest_model.sh
+vendor/etc/init/hw/init.mmi.backup.trustlet.rc
+vendor/etc/init/vendor.mmi.carrier.rc
+
 # MMS
 vendor/bin/hw/vendor.mediatek.hardware.mms-service
 vendor/etc/init/vendor.mediatek.hardware.mms-service.rc
