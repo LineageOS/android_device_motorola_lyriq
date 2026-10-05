@@ -83,3 +83,6 @@ vendor.mtk.camera.app.fd.video=1
 # DRM
 drm.service.enabled=true
 ro.netflix.bsp_rev=MTK6893-32816-1
+
+# Gatekeeper
+ro.hardware.gatekeeper=trustonic
