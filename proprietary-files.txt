@@ -1027,6 +1027,13 @@ vendor/lib64/libTEECommon.so
 vendor/lib64/vendor.trustonic.tee-V1-ndk.so
 vendor/lib64/vendor.trustonic.tui-V1-ndk.so
 
+# Tether offload
+vendor/bin/hw/tetheroffloadservice
+vendor/etc/init/android.hardware.tetheroffload-V1-service.rc
+vendor/etc/vintf/manifest/android.hardware.tetheroffload-V1-service.xml
+vendor/lib64/libforkexecwrap.so
+vendor/lib64/libifcutils_mtk.so
+
 # Vibrator (firmware)
 vendor/firmware/aw8622x_haptic.bin
 vendor/firmware/aw8622x_osc_rtp_12K_10s.bin
