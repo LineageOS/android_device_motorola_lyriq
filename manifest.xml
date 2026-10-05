@@ -39,4 +39,16 @@
         <version>3</version>
         <fqname>IRemotelyProvisionedComponent/default</fqname>
     </hal>
+    <hal format="aidl">
+        <name>vendor.trustonic.tee</name>
+        <fqname>ITee/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.trustonic.tui</name>
+        <fqname>ITui/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.tsa.hdcp</name>
+        <fqname>IHDCPInterface/default</fqname>
+    </hal>
 </manifest>
