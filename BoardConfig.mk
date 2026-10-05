@@ -71,6 +71,9 @@ BOARD_USES_METADATA_PARTITION := true
 # Properties
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
+# Security patch level
+VENDOR_SECURITY_PATCH := 2026-08-01
+
 # VINTF
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 
