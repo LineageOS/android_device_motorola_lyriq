@@ -1109,6 +1109,24 @@ vendor/lib64/vendor.mediatek.hardware.apuware.apusys-V5-ndk.so;MODULE_SUFFIX=_ve
 vendor/lib64/vendor.mediatek.hardware.apuware.utils-V1-ndk.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.mediatek.hardware.apuware.xrp-V1-ndk.so;MODULE_SUFFIX=_vendor
 
+# NFC
+vendor/bin/nxpnfcinfo
+vendor/etc/init/init.lyriq.nfc.conf.rc
+vendor/etc/init/init.lyriq.nfc.rc
+vendor/etc/init/init.lyriq.se.rc
+vendor/lib64/libnxp_extamp_intf.so
+vendor/lib64/ese_teq1_nxp_snxxx.so
+vendor/lib64/libpn560_fw.so
+vendor/lib64/libsn220u_fw.so
+
+# NFC (configs)
+vendor/etc/libese-nxp.conf
+vendor/etc/libnfc-nci.conf
+vendor/etc/libnfc-nxp-PN560.conf
+vendor/etc/libnfc-nxp-SN220E.conf
+vendor/etc/libnfc-nxp-SN220P.conf
+vendor/etc/libnfc-nxp.conf
+
 # NVRAM
 vendor/bin/hw/vendor.mediatek.hardware.nvram-service
 vendor/bin/nvram_daemon
