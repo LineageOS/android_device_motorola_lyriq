@@ -28,6 +28,7 @@ vendor.audiohal.telephonytx.type=2
 vendor.usbsph.dl.pcm.dump=0
 vendor.usbsph.ul.pcm.dump=0
 vendor.usbsph.srcaws.pcm.dump=0
+vendor.audio.powerhal.latency.ul=true
 
 # Bluetooth
 bluetooth.hardware.power.operating_voltage_mv=3300

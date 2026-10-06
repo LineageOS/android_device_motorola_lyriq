@@ -1117,7 +1117,6 @@ vendor/lib64/mt6893/libnir_neon_driver.so;SYMLINK=vendor/lib64/libnir_neon_drive
 vendor/lib64/vendor.mediatek.hardware.apuware.apusys-V5-ndk.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.mediatek.hardware.apuware.utils-V1-ndk.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.mediatek.hardware.apuware.xrp-V1-ndk.so;MODULE_SUFFIX=_vendor
-vendor/lib64/vendor.mediatek.hardware.mtkpower-V1-ndk.so
 
 # NFC
 vendor/bin/nxpnfcinfo
