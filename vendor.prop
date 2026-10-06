@@ -193,6 +193,14 @@ persist.radio.is_vonr_enabled_0=true
 persist.radio.is_vonr_enabled_1=true
 ro.vendor.mtk_data_config=1
 
+# Platform
+ro.vendor.mediatek.version.branch=alps-mp-v0.mp1.tc2sp1
+ro.vendor.mediatek.version.release=alps-mp-v0.mp1.tc2sp1-V1.117
+ro.vendor.mediatek.platform=MT6893
+ro.board.platform=mt6893
+ro.soc.manufacturer=Mediatek
+ro.soc.model=MT6893
+
 # LMK
 ro.lmk.kill_heaviest_task=true
 ro.lmk.kill_timeout_ms=50
