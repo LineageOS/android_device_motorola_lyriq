@@ -186,6 +186,15 @@ ro.vendor.mtk_tee_gp_support=1
 vendor.mtk.vdec.decode.error.handle.mode=3
 vendor.mtk.vdec.waitkeyframeforplay=11
 
+# Neural Networks
+debug.mtk_tflite.target_nnapi=29
+ro.vendor.mtk_nn.option=A,B,E,F,Z
+ro.vendor.mtk_nn_baseline_support=1
+ro.vendor.mtk_nn_quant_preferred=1
+
+# Keystore
+ro.hardware.kmsetkey=trustonic
+
 # Picture Quality
 debug.mediatek.appgamepq_compress=1
 debug.mediatek.disp_decompress=1
