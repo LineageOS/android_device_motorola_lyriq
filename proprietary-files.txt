@@ -13,31 +13,31 @@ system/lib64/av-audio-types-aidl-V1-ndk.so
 system_ext/bin/hw/android.hardware.audio.parameter_parser.service
 system_ext/etc/init/android.hardware.audio.parameter_parser.service.rc
 vendor/bin/hw/android.hardware.audio.service-aidl.mediatek
+vendor/etc/ap_gain.bin
+vendor/etc/ap_gain_mmul.bin
 vendor/etc/init/android.hardware.audio.service-aidl.mediatek.rc
 vendor/etc/vintf/manifest/android.hardware.audio.effect.service-aidl.xml
 vendor/etc/vintf/manifest/android.hardware.audio.service-aidl.xml:vendor/etc/vintf/manifest/android.hardware.audio.service-aidl.mediatek.xml
+vendor/etc/vintf/manifest/motorola.hardware.audio.radar2.xml
+vendor/firmware/aw882xx_acf.bin
 vendor/lib64/android.hardware.audio.core-impl-mediatek.so
 vendor/lib64/hw/android.hardware.audio.effect.aidl-impl-mediatek.so
 vendor/lib64/hw/android.hardware.soundtrigger3-impl.so
-vendor/lib64/hw/sound_trigger.primary.default.so
-vendor/lib64/libaudio_aidl_conversion_common_ndk.so:vendor/lib64/libaudio_aidl_conversion_common_ndk_prebuilt.so;FIX_SONAME
 vendor/lib64/hw/audio.primary.mt6893.so
 vendor/lib64/hw/audio.r_submix.mt6893.so
 vendor/lib64/hw/audio.usb.default.so
-vendor/lib64/hw/motorola.hardware.audio.radar2-impl.so
 vendor/lib64/hw/audio_radar.primary.default.so
+vendor/lib64/hw/motorola.hardware.audio.radar2-impl.so
+vendor/lib64/hw/sound_trigger.primary.default.so
 vendor/lib64/hw/vendor.mediatek.hardware.audio-impl.so
-vendor/firmware/aw882xx_acf.bin
-vendor/etc/vintf/manifest/motorola.hardware.audio.radar2.xml
-vendor/etc/ap_gain.bin
-vendor/etc/ap_gain_mmul.bin
-vendor/lib64/libalsautils.so:vendor/lib64/libalsautils-stock.so;FIX_SONAME
 vendor/lib64/libMtkSpeechEnh.so
 vendor/lib64/libMtkSpeechEnh_swb.so
 vendor/lib64/lib_iir.so
+vendor/lib64/libalsautils.so:vendor/lib64/libalsautils-stock.so;FIX_SONAME
 vendor/lib64/libaualgo_arp_wrapper.so
 vendor/lib64/libaualgo_azp_wrapper.so
 vendor/lib64/libaualgo_foundation.so
+vendor/lib64/libaudio_aidl_conversion_common_ndk.so:vendor/lib64/libaudio_aidl_conversion_common_ndk_prebuilt.so;FIX_SONAME
 vendor/lib64/libaudio_param_parser-vnd.so
 vendor/lib64/libaudiocompensationfilter_vendor.so
 vendor/lib64/libaudiocompensationfilterc.so
@@ -62,7 +62,6 @@ vendor/lib64/libmtkspparser.so
 vendor/lib64/librt_extamp_intf.so
 vendor/lib64/libspeech_enh_lib.so;FIX_SONAME
 vendor/lib64/libspeechparser_vendor.so
-vendor/lib64/libvow_comp_test.so
 vendor/lib64/libvow_ap_test_aa.so
 vendor/lib64/libvow_ap_test_dd.so
 vendor/lib64/libvow_ap_test_ha.so
@@ -78,10 +77,15 @@ vendor/lib64/libvow_ap_test_vaca_dd.so
 vendor/lib64/libvow_ap_test_vaca_ha.so
 vendor/lib64/libvow_ap_test_vaca_hh.so
 vendor/lib64/libvow_ap_test_vaca_nn.so
+vendor/lib64/libvow_comp_test.so
 vendor/lib64/motorola.hardware.audio.radar2-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.audio-V1-ndk.so
 
 # Audio (Configs)
+vendor/etc/aualgo/aualgo_arp.conf
+vendor/etc/aualgo/aualgo_azp.conf
+vendor/etc/audio_device.xml
+vendor/etc/audio_em.xml
 vendor/etc/audio_param/AudioParamOptions.xml
 vendor/etc/audio_param/AudioParamOptions_vext.xml
 vendor/etc/audio_param/BtInfo_AudioParam.xml
@@ -211,16 +215,12 @@ vendor/etc/audio_param/VolumeGainMap_AudioParam.xml
 vendor/etc/audio_param/VolumeGainMap_ParamUnitDesc.xml
 vendor/etc/audio_param/Volume_AudioParam.xml
 vendor/etc/audio_param/Volume_ParamUnitDesc.xml
-vendor/etc/smartpa_param/AW_DSP.bin
-vendor/etc/smartpa_param_b/AW_DSP.bin
-vendor/etc/aualgo/aualgo_arp.conf
-vendor/etc/aualgo/aualgo_azp.conf
-vendor/etc/audio_device.xml
-vendor/etc/audio_em.xml
 vendor/etc/aurisys_config.xml
 vendor/etc/aurisys_config_hifi3.xml
 vendor/etc/aurisys_config_hifi3_B100.xml
 vendor/etc/aurisys_config_rv.xml
+vendor/etc/smartpa_param/AW_DSP.bin
+vendor/etc/smartpa_param_b/AW_DSP.bin
 
 # Bluetooth
 vendor/etc/init/init.bt_drv.rc
@@ -256,8 +256,8 @@ vendor/lib64/hw/vendor.mediatek.hardware.camera.postproc_aidl@1.0-impl.so
 vendor/lib64/lib3a.ae.core.so
 vendor/lib64/lib3a.ae.so
 vendor/lib64/lib3a.ae.stat.so
-vendor/lib64/lib3a.af.assist.so
 vendor/lib64/lib3a.af.assist.models.so
+vendor/lib64/lib3a.af.assist.so
 vendor/lib64/lib3a.af.assist.utils.so
 vendor/lib64/lib3a.af.core.so
 vendor/lib64/lib3a.af.so
@@ -275,28 +275,10 @@ vendor/lib64/lib3a.log.so
 vendor/lib64/lib3a.n3d3a.so
 vendor/lib64/lib3a.sensors.color.so
 vendor/lib64/lib3a.sensors.flicker.so
-vendor/lib64/libArcNetMtk.so
 vendor/lib64/libAncHumanSegFigureFusion.so
+vendor/lib64/libArcNetMtk.so
 vendor/lib64/libBSTAiScene.so
 vendor/lib64/libBSTDSLR.so
-vendor/lib64/libDR.so
-vendor/lib64/libDxHdcp.so
-vendor/lib64/libaiawb_moon_model.so
-vendor/lib64/libaiawb_sun_model.so
-vendor/lib64/libaibc_tuning.so
-vendor/lib64/libaibc_tuning_p2.so
-vendor/lib64/libaibc_tuning_p3.so
-vendor/lib64/libaidepth_tuning.so
-vendor/lib64/libaimemc.so
-vendor/lib64/libancbase_rt_fusion.so;FIX_SONAME
-vendor/lib64/libapmonitor_vendor.so
-vendor/lib64/libapu_mdw_batch.so
-vendor/lib64/libapusys.so
-vendor/lib64/mt6893/libdre.so;SYMLINK=vendor/lib64/libdre.so
-vendor/lib64/mt6893/libgpudataproducer.so;SYMLINK=vendor/lib64/libgpudataproducer.so
-vendor/lib64/mt6893/libhdrvideo.so;SYMLINK=vendor/lib64/libhdrvideo.so
-vendor/lib64/mt6893/libmdla_ut.so;SYMLINK=vendor/lib64/libmdla_ut.so
-vendor/lib64/mt6893/libmmagent.so;SYMLINK=vendor/lib64/libmmagent.so
 vendor/lib64/libCamera_motlyriqhi1336mipiraw_ArcSoft_Raw_NV_Capture.so
 vendor/lib64/libCamera_motlyriqhi1336mipiraw_ArcSoft_Raw_NV_Face_Capture.so
 vendor/lib64/libCamera_motlyriqhi1336mipiraw_ArcSoft_Raw_NV_Preview.so
@@ -522,6 +504,8 @@ vendor/lib64/libCamera_motlyriqov50emipiraw_Video_Capture_4X.so
 vendor/lib64/libCamera_motlyriqov50emipiraw_Video_Capture_60fps.so
 vendor/lib64/libCamera_motlyriqov50emipiraw_Zoom_Capture_2X.so
 vendor/lib64/libCamera_motlyriqov50emipiraw_Zoom_Preview_2X.so
+vendor/lib64/libDR.so
+vendor/lib64/libDxHdcp.so
 vendor/lib64/libJpgEncPipe.so
 vendor/lib64/libSQLiteModule_VER_ALL.so
 vendor/lib64/libSonyIMX230PdafLibrary.so
@@ -537,9 +521,20 @@ vendor/lib64/libaaa_ltm.so
 vendor/lib64/libaaa_ltmx.so
 vendor/lib64/libaedv.so
 vendor/lib64/libaiawb_moon.so
+vendor/lib64/libaiawb_moon_model.so
 vendor/lib64/libaiawb_p1ggm.so
 vendor/lib64/libaiawb_sun.so
+vendor/lib64/libaiawb_sun_model.so
+vendor/lib64/libaibc_tuning.so
+vendor/lib64/libaibc_tuning_p2.so
+vendor/lib64/libaibc_tuning_p3.so
+vendor/lib64/libaidepth_tuning.so
+vendor/lib64/libaimemc.so
 vendor/lib64/libaiselector.so
+vendor/lib64/libancbase_rt_fusion.so;FIX_SONAME
+vendor/lib64/libapmonitor_vendor.so
+vendor/lib64/libapu_mdw_batch.so
+vendor/lib64/libapusys.so
 vendor/lib64/libarcsoft_portrait_distortion_correction.so
 vendor/lib64/libarcsoft_portrait_super_night_se_raw.so
 vendor/lib64/libarcsoft_super_night_raw.so
@@ -694,7 +689,6 @@ vendor/lib64/libmtkcam_rsc.so
 vendor/lib64/libmtkcam_scenariorecorder.so
 vendor/lib64/libmtkcam_stdutils.so
 vendor/lib64/libmtkcam_streamutils.so
-vendor/lib64/mtkcam/libmtkcam_streaminfo_plugin-p1stt.so
 vendor/lib64/libmtkcam_synchelper.so
 vendor/lib64/libmtkcam_sysutils.so
 vendor/lib64/libmtkcam_tuning_utils.so
@@ -704,22 +698,30 @@ vendor/lib64/libsdrparser.so
 vendor/lib64/libstereoinfoaccessor_vsdof.so
 vendor/lib64/libudf.so
 vendor/lib64/libvidhance.so
-vendor/lib64/mot_lyriq_hi1336_mipi_raw_row_tuning.so
-vendor/lib64/mot_lyriq_hi1336_mipi_raw_tuning.so
-vendor/lib64/mot_lyriq_ov32b_mipi_raw_row_tuning.so
-vendor/lib64/mot_lyriq_ov32b_mipi_raw_tuning.so
-vendor/lib64/mot_lyriq_ov50a_mipi_raw_row_tuning.so
-vendor/lib64/mot_lyriq_ov50a_mipi_raw_tuning.so
-vendor/lib64/mot_lyriq_ov50e_mipi_raw_tuning.so
 vendor/lib64/mot_lyriq_hi1336_mipi_raw_IdxMgr.so
 vendor/lib64/mot_lyriq_hi1336_mipi_raw_row_IdxMgr.so
+vendor/lib64/mot_lyriq_hi1336_mipi_raw_row_tuning.so
+vendor/lib64/mot_lyriq_hi1336_mipi_raw_tuning.so
 vendor/lib64/mot_lyriq_ov32b_mipi_raw_IdxMgr.so
 vendor/lib64/mot_lyriq_ov32b_mipi_raw_row_IdxMgr.so
+vendor/lib64/mot_lyriq_ov32b_mipi_raw_row_tuning.so
+vendor/lib64/mot_lyriq_ov32b_mipi_raw_tuning.so
 vendor/lib64/mot_lyriq_ov50a_mipi_raw_IdxMgr.so
 vendor/lib64/mot_lyriq_ov50a_mipi_raw_row_IdxMgr.so
+vendor/lib64/mot_lyriq_ov50a_mipi_raw_row_tuning.so
+vendor/lib64/mot_lyriq_ov50a_mipi_raw_tuning.so
 vendor/lib64/mot_lyriq_ov50e_mipi_raw_IdxMgr.so
+vendor/lib64/mot_lyriq_ov50e_mipi_raw_tuning.so
 vendor/lib64/motorola.hardware.camera.imgtuner.aidl-V1-ndk.so
+vendor/lib64/mt6893/libdre.so;SYMLINK=vendor/lib64/libdre.so
+vendor/lib64/mt6893/libgpudataproducer.so;SYMLINK=vendor/lib64/libgpudataproducer.so
+vendor/lib64/mt6893/libhdrvideo.so;SYMLINK=vendor/lib64/libhdrvideo.so
+vendor/lib64/mt6893/libmdla_ut.so;SYMLINK=vendor/lib64/libmdla_ut.so
+vendor/lib64/mt6893/libmmagent.so;SYMLINK=vendor/lib64/libmmagent.so
 vendor/lib64/mtk000_mipi_raw_IdxMgr.so
+vendor/lib64/mtkcam/libmtkcam_streaminfo_plugin-p1stt.so
+vendor/lib64/vendor.mediatek.hardware.apmonitor-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.apmonitor@2.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.atms-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.camera.bgservice-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.camera.frhandler@1.0.so
@@ -727,17 +729,15 @@ vendor/lib64/vendor.mediatek.hardware.camera.isphal-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.camera.postproc-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.camera.postproc@1.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.security@1.0.so
-vendor/lib64/vendor.mediatek.hardware.apmonitor-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.apmonitor@2.0.so
 vendor/lib64/vendor.mediatek.hardware.power@2.0.so
 
 # Camera configs
-vendor/etc/jiigan/jiigan_model.data
+vendor/etc/arcsoft_calibration_u_dc.bin
 vendor/etc/camera/vidhance.lic
 vendor/etc/camera/vidhance_calibration
-vendor/etc/tetras/portrait_repair_composite.model
-vendor/etc/arcsoft_calibration_u_dc.bin
 vendor/etc/dual_golden_wide.bin
+vendor/etc/jiigan/jiigan_model.data
+vendor/etc/tetras/portrait_repair_composite.model
 vendor/etc/vhw.xml
 
 # Camera firmware
@@ -764,31 +764,30 @@ vendor/firmware/soc3_0_ram_wmmcu_1a_1_hdr.bin
 vendor/lib64/libconnfem.so
 
 # Display
+vendor/bin/hw/android.hardware.graphics.allocator-V2-service-mediatek
+vendor/bin/hw/android.hardware.graphics.composer@3.3-service
+vendor/bin/hw/vendor.mediatek.hardware.gpuserv-service
 vendor/bin/hw/vendor.mediatek.hardware.mmlpq@V1-service 
 vendor/bin/hw/vendor.mediatek.hardware.pq_aidl-service 
-vendor/bin/hw/android.hardware.graphics.composer@3.3-service
-vendor/bin/hw/android.hardware.graphics.allocator-V2-service-mediatek
-vendor/lib64/hw/mt6893/mapper.mediatek.so;SYMLINK=vendor/lib64/hw/mapper.mediatek.so 
-vendor/bin/hw/vendor.mediatek.hardware.gpuserv-service
+vendor/etc/cust_color_0.xml
+vendor/etc/cust_color_1.xml
+vendor/etc/cust_silky_brightness.xml
 vendor/etc/gralloc/cam.xml
 vendor/etc/gralloc/dpu.xml
 vendor/etc/gralloc/dpu_aeu.xml
 vendor/etc/gralloc/gpu.xml
 vendor/etc/gralloc/vpu.xml
 vendor/etc/init/android.hardware.graphics.allocator-V2-service-mediatek.rc
-vendor/etc/init/vendor.mediatek.hardware.pq_aidl-service.rc 
 vendor/etc/init/android.hardware.graphics.composer@3.3-service.rc
 vendor/etc/init/arm.mali.platform-mediatek.rc
 vendor/etc/init/gpuserv-default.rc
 vendor/etc/init/init.touch.rc
+vendor/etc/init/vendor.mediatek.hardware.pq_aidl-service.rc 
+vendor/etc/mali_platform.config
+vendor/etc/pq_flag.xml
 vendor/etc/vintf/manifest/manifest_allocator.xml
 vendor/etc/vintf/manifest/manifest_hwcomposer.xml
 vendor/etc/vintf/manifest/mapper.mediatek.xml
-vendor/etc/cust_silky_brightness.xml
-vendor/etc/pq_flag.xml
-vendor/etc/cust_color_0.xml
-vendor/etc/cust_color_1.xml
-vendor/etc/mali_platform.config
 vendor/firmware/valhall-1691526.wa
 vendor/lib64/egl/libGLES_meow.so 
 vendor/lib64/egl/libMEOW_data.so
@@ -797,21 +796,19 @@ vendor/lib64/egl/libMEOW_qt.so
 vendor/lib64/egl/libMEOW_trace.so 
 vendor/lib64/egl/mt6893/libGLES_mali.so;SYMLINK=vendor/lib64/egl/libGLES_mali.so
 vendor/lib64/hw/hwcomposer.mt6893.so
-vendor/lib64/hw/vendor.mediatek.hardware.pq_aidl-impl.so
 vendor/lib64/hw/mt6893/android.hardware.graphics.allocator-V2-mediatek.so;SYMLINK=vendor/lib64/hw/android.hardware.graphics.allocator-V2-mediatek.so
+vendor/lib64/hw/mt6893/mapper.mediatek.so;SYMLINK=vendor/lib64/hw/mapper.mediatek.so 
 vendor/lib64/hw/mt6893/vulkan.mali.so;SYMLINK=vendor/lib64/hw/vulkan.mali.so
+vendor/lib64/hw/vendor.mediatek.hardware.pq_aidl-impl.so
 vendor/lib64/libDefaultFpsActor.so
 vendor/lib64/libFrameRecord.so
 vendor/lib64/libNoFpsActor.so
-vendor/lib64/libion_mtk.so
-vendor/lib64/libion_ulit.so
-vendor/lib64/libpixelflinger.so 
-vendor/lib64/libpqframework.so
-vendor/lib64/libpqhdrmetaparser.so
-vendor/lib64/libpqsharememory.so
-vendor/lib64/libpqtuning.so
-vendor/lib64/libpqxmlparser.so
-vendor/lib64/librgbwlightsensor.so
+vendor/lib64/libOpenCL.so
+vendor/lib64/libappgamepq.so
+vendor/lib64/libarc.ion.so
+vendor/lib64/libasn1c_core.so
+vendor/lib64/libasn1c_mapi.so
+vendor/lib64/libasn1c_mdmi.so
 vendor/lib64/libcomposer_ext.so
 vendor/lib64/libged.so
 vendor/lib64/libgpu_aux.so
@@ -819,32 +816,35 @@ vendor/lib64/libgpud.so
 vendor/lib64/libgralloc_extra.so 
 vendor/lib64/libgralloc_metadata.so
 vendor/lib64/libgralloctypes_mtk.so
-vendor/lib64/libappgamepq.so
-vendor/lib64/libmtkgpuserv.so
-vendor/lib64/libsilkybrightnesscore.so 
-vendor/lib64/libOpenCL.so
-vendor/lib64/libarc.ion.so
-vendor/lib64/libasn1c_core.so
-vendor/lib64/libasn1c_mapi.so
-vendor/lib64/libasn1c_mdmi.so
+vendor/lib64/libion_mtk.so
+vendor/lib64/libion_ulit.so
 vendor/lib64/libminiui.so
+vendor/lib64/libmtkgpuserv.so
+vendor/lib64/libpixelflinger.so 
 vendor/lib64/libpq_cust_base.so 
-vendor/lib64/mt6893/libmml.so;SYMLINK=vendor/lib64/libmml.so 
-vendor/lib64/mt6893/libmmlpqImpl.so;SYMLINK=vendor/lib64/libmmlpqImpl.so
-vendor/lib64/mt6893/libpq_sec.so;SYMLINK=vendor/lib64/libpq_sec.so 
-vendor/lib64/mt6893/libpqparamparser.so;SYMLINK=vendor/lib64/libpqparamparser.so 
+vendor/lib64/libpqframework.so
+vendor/lib64/libpqhdrmetaparser.so
+vendor/lib64/libpqsharememory.so
+vendor/lib64/libpqtuning.so
+vendor/lib64/libpqxmlparser.so
+vendor/lib64/librgbwlightsensor.so
+vendor/lib64/libsilkybrightnesscore.so 
 vendor/lib64/mt6893/arm.graphics-V5-ndk.so;SYMLINK=vendor/lib64/arm.graphics-V5-ndk.so 
 vendor/lib64/mt6893/arm.mali.platform-V2-ndk.so;SYMLINK=vendor/lib64/arm.mali.platform-V2-ndk.so 
 vendor/lib64/mt6893/libarm_egl_properties_sysprop.so;SYMLINK=vendor/lib64/libarm_egl_properties_sysprop.so 
 vendor/lib64/mt6893/libarm_gralloc_properties_sysprop.so;SYMLINK=vendor/lib64/libarm_gralloc_properties_sysprop.so 
 vendor/lib64/mt6893/libarm_mali_config_sysprops.so;SYMLINK=vendor/lib64/libarm_mali_config_sysprops.so 
 vendor/lib64/mt6893/libdpframework.so;SYMLINK=vendor/lib64/libdpframework.so 
+vendor/lib64/mt6893/libmml.so;SYMLINK=vendor/lib64/libmml.so 
+vendor/lib64/mt6893/libmmlpqImpl.so;SYMLINK=vendor/lib64/libmmlpqImpl.so
+vendor/lib64/mt6893/libpq_sec.so;SYMLINK=vendor/lib64/libpq_sec.so 
+vendor/lib64/mt6893/libpqparamparser.so;SYMLINK=vendor/lib64/libpqparamparser.so 
+vendor/lib64/vendor.mediatek.hardware.composer_ext-V1-ndk.so 
+vendor/lib64/vendor.mediatek.hardware.composer_ext@1.0.so
 vendor/lib64/vendor.mediatek.hardware.mmlpq-V3-ndk.so 
 vendor/lib64/vendor.mediatek.hardware.pq_aidl-V2-ndk.so 
 vendor/lib64/vendor.mediatek.hardware.pq_aidl-V4-ndk.so 
 vendor/lib64/vendor.mediatek.hardware.pq_aidl-V7-ndk.so 
-vendor/lib64/vendor.mediatek.hardware.composer_ext-V1-ndk.so 
-vendor/lib64/vendor.mediatek.hardware.composer_ext@1.0.so
 
 # Display (Firmware)
 vendor/firmware/boe_goodix_cfg_group.bin
@@ -856,9 +856,9 @@ vendor/firmware/tm_goodix_test_limits_255.csv
 
 # DRM (Widevine)
 vendor/apex/com.google.android.widevine.nonupdatable.apex
+vendor/lib64/liboemcrypto.so
 vendor/lib64/mediadrm/libdrmclearkeyplugin.so
 vendor/lib64/mediadrm/libmockdrmcryptoplugin.so
-vendor/lib64/liboemcrypto.so
 
 # Euicc
 product/app/EuiccPartnerApp/EuiccPartnerApp.apk;PRESIGNED
@@ -872,9 +872,9 @@ product/etc/felica/mfs.cfg
 product/priv-app/MobileFeliCaClient/MobileFeliCaClient.apk;PRESIGNED
 
 # Fingerprint
-vendor/lib64/hw/fingerprint.goodix.default.so
 vendor/lib64/com.motorola.hardware.display.panel-V1-ndk.so
 vendor/lib64/com.motorola.hardware.display.panel@1.0.so
+vendor/lib64/hw/fingerprint.goodix.default.so
 vendor/lib64/libgf_hal.so
 
 # Gatekeeper
@@ -884,13 +884,13 @@ vendor/etc/vintf/manifest/android.hardware.gatekeeper-service.trustonic.xml
 
 # GNSS
 vendor/bin/hw/android.hardware.gnss-service.mediatek
-vendor/etc/init/android.hardware.gnss-service.mediatek.rc
 vendor/bin/mnld
 vendor/bin/mtk_agpsd
+vendor/etc/init/android.hardware.gnss-service.mediatek.rc
+vendor/etc/init/init.gps_drv.rc
 vendor/etc/init/mtk_agpsd_p.rc
 vendor/etc/vintf/manifest/gnss-default.xml:vendor/etc/vintf/manifest/gnss-mtk-default.xml
 vendor/etc/vintf/manifest/gnss-mtk.xml
-vendor/etc/init/init.gps_drv.rc
 vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so
 vendor/lib64/hw/gps.default.so
 vendor/lib64/hw/vendor.mediatek.hardware.gnss-impl.so
@@ -898,6 +898,7 @@ vendor/lib64/libmnl.so
 vendor/lib64/vendor.mediatek.hardware.gnss-V2-ndk.so
 
 # GNSS (Configs)
+vendor/etc/gnss/agps_profiles_conf2.xml
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_Mexico.xml
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_US.xml
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Bell_Mobility.xml
@@ -936,13 +937,12 @@ vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_USC.xml
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Verizon_Wireless.xml
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Virgin_Mobile.xml
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_nTelos.xml
-vendor/etc/gnss/agps_profiles_conf2.xml
 
 # IMS
-system_ext/bin/vtservice
-system_ext/etc/init/init.vtservice.rc
 system/etc/permissions/moto-telephony.xml
 system/framework/moto-telephony.jar
+system_ext/bin/vtservice
+system_ext/etc/init/init.vtservice.rc
 system_ext/framework/mediatek-ims-base.jar
 system_ext/framework/mediatek-ims-oem-plugin.jar
 system_ext/lib64/libcomutils.so
@@ -966,14 +966,14 @@ system_ext/priv-app/MtkTelephonyAssist/MtkTelephonyAssist.apk
 
 # IMS (Vendor)
 vendor/bin/hw/vtservice_aidl
-vendor/etc/init/init.vtservice_aidl.rc
 vendor/bin/mtk_lbs_service 
+vendor/etc/init/init.vtservice_aidl.rc
 vendor/etc/init/mtk_lbs_service.rc 
 vendor/etc/vintf/manifest/mtk_lbs_service.xml
+vendor/lib64/hw/vendor.mediatek.hardware.videotelephony-impl.so 
 vendor/lib64/mtk_lbs_service-impl.so
 vendor/lib64/vendor.mediatek.hardware.lbs-V1-ndk.so 
 vendor/lib64/vendor.mediatek.hardware.lbs@1.0.so 
-vendor/lib64/hw/vendor.mediatek.hardware.videotelephony-impl.so 
 vendor/lib64/vendor.mediatek.hardware.videotelephony-V1-ndk.so;MODULE_SUFFIX=_vendor
 
 # Keymint
@@ -992,6 +992,7 @@ vendor/etc/init.insmod.mt6893.cfg
 # Media
 vendor/bin/hw/android.hardware.media.c2-mediatek-64b:vendor/bin/hw/android.hardware.media.c2-mediatek
 vendor/etc/init/android.hardware.media.c2-mediatek.rc
+vendor/etc/mtk_platform_codecs_config.xml
 vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-extended-seccomp-policy
 vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-mediatek-seccomp-policy
 vendor/etc/vintf/manifest/vendor.dolby.media.c2-default-service-dax.xml:vendor/etc/vintf/manifest/manifest_media_c2_default.xml
@@ -1010,14 +1011,14 @@ vendor/lib64/libformatter.so
 vendor/lib64/mt6893/libmtk_drvb.so;SYMLINK=vendor/lib64/libmtk_drvb.so
 
 # Motorola (scripts)
-vendor/bin/motobox;SYMLINK=vendor/bin/expat
 vendor/bin/hardware_revisions.sh
+vendor/bin/init.mmi.attest_model.sh
 vendor/bin/init.mmi.backup.trustlet.sh
 vendor/bin/init.mmi.block_perm.sh
 vendor/bin/init.mmi.boot.sh
 vendor/bin/init.mmi.shutdown.sh
 vendor/bin/init.mmi.touch.sh
-vendor/bin/init.mmi.attest_model.sh
+vendor/bin/motobox;SYMLINK=vendor/bin/expat
 vendor/etc/init/hw/init.mmi.backup.trustlet.rc
 vendor/etc/init/vendor.mmi.carrier.rc
 
@@ -1091,21 +1092,15 @@ system_ext/lib64/vendor.mediatek.hardware.apuware.xrp@2.0.so
 
 # Neural networks
 vendor/bin/hw/android.hardware.neuralnetworks-shim-service-mtk-legacy
-vendor/etc/init/android.hardware.neuralnetworks-shim-service-mtk.rc
-vendor/etc/vintf/manifest/android.hardware.neuralnetworks-shim-service-mtk.xml
-vendor/etc/vintf/manifest/manifest_apuware_utils_aidl.xml
-vendor/etc/vintf/manifest/manifest_apuware_apusys_aidl.xml
-vendor/etc/vintf/manifest/manifest_apuware_xrp_aidl.xml
 vendor/etc/armnn_app.config
+vendor/etc/init/android.hardware.neuralnetworks-shim-service-mtk.rc
 vendor/etc/nhw
-vendor/lib64/mt6893/libneuron_adapter_mgvi.so;SYMLINK=vendor/lib64/libneuron_adapter_mgvi.so
-vendor/lib64/mt6893/libneuron_platform.vpu.so;SYMLINK=vendor/lib64/libneuron_platform.vpu.so
-vendor/lib64/mt6893/libneuron_runtime.5.so;SYMLINK=vendor/lib64/libneuron_runtime.5.so
-vendor/lib64/mt6893/libneuron_runtime.so;SYMLINK=vendor/lib64/libneuron_runtime.so
-vendor/lib64/mt6893/libnir_neon_driver.so;SYMLINK=vendor/lib64/libnir_neon_driver.so
-vendor/lib64/libneuron_graph_delegate.mtk.so;MODULE_SUFFIX=_vendor
-vendor/lib64/APUWareUtilsAidlServer.so
+vendor/etc/vintf/manifest/android.hardware.neuralnetworks-shim-service-mtk.xml
+vendor/etc/vintf/manifest/manifest_apuware_apusys_aidl.xml
+vendor/etc/vintf/manifest/manifest_apuware_utils_aidl.xml
+vendor/etc/vintf/manifest/manifest_apuware_xrp_aidl.xml
 vendor/lib64/APUWareApusysAidlServer.so
+vendor/lib64/APUWareUtilsAidlServer.so
 vendor/lib64/APUWareXrpAidlServer.so
 vendor/lib64/libapu_mdw.so
 vendor/lib64/libarmnn.so
@@ -1114,20 +1109,26 @@ vendor/lib64/libcmdl.so
 vendor/lib64/libcmdl_ndk.mtk.vndk.so
 vendor/lib64/libneuralnetworks_sl_driver_mtk_legacy_prebuilt.so
 vendor/lib64/libneuroeara.so
-vendor/lib64/libnputils.so
-vendor/lib64/vendor.mediatek.hardware.mtkpower-V1-ndk.so
+vendor/lib64/libneuron_graph_delegate.mtk.so;MODULE_SUFFIX=_vendor
 vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so;FIX_SONAME
+vendor/lib64/libnputils.so
+vendor/lib64/mt6893/libneuron_adapter_mgvi.so;SYMLINK=vendor/lib64/libneuron_adapter_mgvi.so
+vendor/lib64/mt6893/libneuron_platform.vpu.so;SYMLINK=vendor/lib64/libneuron_platform.vpu.so
+vendor/lib64/mt6893/libneuron_runtime.5.so;SYMLINK=vendor/lib64/libneuron_runtime.5.so
+vendor/lib64/mt6893/libneuron_runtime.so;SYMLINK=vendor/lib64/libneuron_runtime.so
+vendor/lib64/mt6893/libnir_neon_driver.so;SYMLINK=vendor/lib64/libnir_neon_driver.so
 vendor/lib64/vendor.mediatek.hardware.apuware.apusys-V5-ndk.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.mediatek.hardware.apuware.utils-V1-ndk.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.mediatek.hardware.apuware.xrp-V1-ndk.so;MODULE_SUFFIX=_vendor
+vendor/lib64/vendor.mediatek.hardware.mtkpower-V1-ndk.so
 
 # NFC
 vendor/bin/nxpnfcinfo
 vendor/etc/init/init.lyriq.nfc.conf.rc
 vendor/etc/init/init.lyriq.nfc.rc
 vendor/etc/init/init.lyriq.se.rc
-vendor/lib64/libnxp_extamp_intf.so
 vendor/lib64/ese_teq1_nxp_snxxx.so
+vendor/lib64/libnxp_extamp_intf.so
 vendor/lib64/libpn560_fw.so
 vendor/lib64/libsn220u_fw.so
 
@@ -1152,16 +1153,16 @@ vendor/lib64/libnvram_sec.so
 vendor/lib64/vendor.mediatek.hardware.nvram-V1-ndk.so
 
 # Radio
-vendor/bin/hw/mtkfusionrild
-vendor/bin/gsm0710muxd
 vendor/bin/ccci_mdinit
 vendor/bin/ccci_rpcd
+vendor/bin/gsm0710muxd
+vendor/bin/hw/mtkfusionrild
 vendor/bin/muxreport
 vendor/bin/rcs_volte_stack
 vendor/bin/volte_clientapi_ua
+vendor/etc/init/gsm0710muxd.rc
 vendor/etc/init/init.cccimdinit.rc
 vendor/etc/init/init.cccirpcd.rc
-vendor/etc/init/gsm0710muxd.rc
 vendor/etc/init/mtkrild.rc
 vendor/etc/init/muxreport.rc
 vendor/etc/init/volte_clientapi_ua.rc
@@ -1222,9 +1223,9 @@ vendor/lib64/vendor.mediatek.hardware.mtkradioex.smartratswitch-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex.voice-V1-ndk.so
 
 # Radio (IMS)
+vendor/etc/MNL_Config.xml
 vendor/etc/apdb/APDB_MT6885_S01__W2506
 vendor/etc/apdb/APDB_MT6885_S01__W2506_ENUM
-vendor/etc/MNL_Config.xml
 vendor/etc/ecc_list.xml
 vendor/etc/ecc_list_OP01.xml
 vendor/etc/ecc_list_OP02.xml
@@ -1252,13 +1253,6 @@ vendor/lib64/libsensor_custom.so
 vendor/lib64/sensors.moto.so
 
 # TEE
-vendor/bin/hw/vendor.trustonic.tee-service
-vendor/bin/mtk_storageproxyd
-vendor/bin/mcDriverDaemon
-vendor/etc/init/mtk_storageproxyd.rc
-vendor/etc/init/tee.rc
-vendor/etc/init/trustonic.rc
-vendor/etc/init/vendor.trustonic.tee-service.rc
 vendor/app/mcRegistry/020f0000000000000000000000000000.drbin
 vendor/app/mcRegistry/020f0000000000000000000000000000.tlbin
 vendor/app/mcRegistry/031c0000000000000000000000000000.drbin
@@ -1294,10 +1288,17 @@ vendor/app/mcRegistry/9073f03a9618383bb1856eb3f990babd.tlbin
 vendor/app/mcRegistry/98fb95bcb4bf42d26473eae48690d7ea.tabin
 vendor/app/mcRegistry/e97c270ea5c44c58bcd3384a2fa2539e.tabin
 vendor/app/mcRegistry/ffffffff000000000000000000000003.tabin
-vendor/lib64/libmtk_bsg.so
-vendor/lib64/libthha.so;DISABLE_CHECKELF
+vendor/bin/hw/vendor.trustonic.tee-service
+vendor/bin/mcDriverDaemon
+vendor/bin/mtk_storageproxyd
+vendor/etc/init/mtk_storageproxyd.rc
+vendor/etc/init/tee.rc
+vendor/etc/init/trustonic.rc
+vendor/etc/init/vendor.trustonic.tee-service.rc
 vendor/lib64/libMcClient.so
 vendor/lib64/libTEECommon.so
+vendor/lib64/libmtk_bsg.so
+vendor/lib64/libthha.so;DISABLE_CHECKELF
 vendor/lib64/vendor.trustonic.tee-V1-ndk.so
 vendor/lib64/vendor.trustonic.tui-V1-ndk.so
 
@@ -1311,13 +1312,13 @@ vendor/lib64/libifcutils_mtk.so
 # Thermal
 vendor/bin/thermal_core
 vendor/bin/thermal_intf
-vendor/etc/init/init.thermal_core.rc
 vendor/etc/.tp/.thermal_policy_08
 vendor/etc/.tp/.thermal_policy_12
 vendor/etc/.tp/.thermal_policy_13
 vendor/etc/.tp/.thermal_policy_14
 vendor/etc/.tp/thermal.conf
 vendor/etc/.tp/thermal.off.conf
+vendor/etc/init/init.thermal_core.rc
 vendor/etc/mpe.conf
 
 # Vibrator (firmware)
@@ -1382,8 +1383,8 @@ vendor/lib64/libmvpu_wrapper.so
 
 # WiFi
 vendor/bin/netdagent
-vendor/etc/init/netdagent.rc
 vendor/etc/init/init.wlan_drv.rc
+vendor/etc/init/netdagent.rc
 vendor/etc/vintf/manifest/CommandService.xml
 vendor/lib64/libwapi.so
 vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so;FIX_SONAME
