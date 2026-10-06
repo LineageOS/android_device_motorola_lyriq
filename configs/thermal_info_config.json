@@ -1,0 +1,138 @@
+{
+    "Sensors": [
+        {
+            "Name": "CPU",
+            "Type": "CPU",
+            "ZoneName": "mtktscpu",
+            "HotThreshold": [
+                "NaN",
+                "NaN",
+                "NaN",
+                85.0,
+                90.0,
+                100.0,
+                117.0
+            ],
+            "VrThreshold": "85.0",
+            "Multiplier": 0.001
+        },
+        {
+            "Name": "GPU",
+            "Type": "GPU",
+            "ZoneName": "mtktscpu",
+            "HotThreshold": [
+                "NaN",
+                "NaN",
+                "NaN",
+                85.0,
+                90.0,
+                100.0,
+                117.0
+            ],
+            "VrThreshold": "85.0",
+            "Multiplier": 0.001
+        },
+        {
+            "Name": "BATTERY",
+            "Type": "BATTERY",
+            "ZoneName": "mtktsbattery",
+            "HotThreshold": [
+                "NaN",
+                "NaN",
+                "NaN",
+                50.0,
+                55.0,
+                59.0,
+                60.0
+            ],
+            "VrThreshold": "50.0",
+            "Multiplier": 0.001
+        },
+        {
+            "Name": "SKIN",
+            "Type": "SKIN",
+            "ZoneName": "mtktsAP",
+            "HotThreshold": [
+                "NaN",
+                43.0,
+                45.0,
+                50.0,
+                70.0,
+                80.0,
+                90.0
+            ],
+            "VrThreshold": "43.0",
+            "Multiplier": 0.001
+        },
+        {
+            "Name": "POWER_AMPLIFIER",
+            "Type": "POWER_AMPLIFIER",
+            "ZoneName": "mtktsbtsmdpa",
+            "HotThreshold": [
+                "NaN",
+                "NaN",
+                "NaN",
+                68.0,
+                90.0,
+                100.0,
+                110.0
+            ],
+            "VrThreshold": "68.0",
+            "Multiplier": 0.001
+        },
+        {
+            "Name": "NPU",
+            "Type": "NPU",
+            "ZoneName": "mtktscpu",
+            "HotThreshold": [
+                "NaN",
+                "NaN",
+                "NaN",
+                85.0,
+                90.0,
+                100.0,
+                117.0
+            ],
+            "VrThreshold": "NaN",
+            "Multiplier": 0.001
+        },
+        {
+            "Name": "TPU",
+            "Type": "TPU",
+            "ZoneName": "mtktscpu",
+            "HotThreshold": [
+                "NaN",
+                "NaN",
+                "NaN",
+                85.0,
+                90.0,
+                100.0,
+                117.0
+            ],
+            "VrThreshold": "NaN",
+            "Multiplier": 0.001
+        },
+        {
+            "Name": "SOC",
+            "Type": "SOC",
+            "ZoneName": "mtktscpu",
+            "HotThreshold": [
+                "NaN",
+                "NaN",
+                "NaN",
+                85.0,
+                90.0,
+                100.0,
+                117.0
+            ],
+            "VrThreshold": "NaN",
+            "Multiplier": 0.001
+        }
+    ],
+    "CoolingDevices": [
+        {
+            "Name": "devfreq-13000000.mali",
+            "Type": "GPU"
+        }
+    ]
+}
