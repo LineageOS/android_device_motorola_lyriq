@@ -894,7 +894,7 @@ vendor/etc/vintf/manifest/gnss-mtk.xml
 vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so
 vendor/lib64/hw/gps.default.so
 vendor/lib64/hw/vendor.mediatek.hardware.gnss-impl.so
-vendor/lib64/libmnl.so
+vendor/lib64/libmnl.so:vendor/lib64/libmnl-mtk.so;FIX_SONAME
 vendor/lib64/vendor.mediatek.hardware.gnss-V2-ndk.so
 
 # GNSS (Configs)
