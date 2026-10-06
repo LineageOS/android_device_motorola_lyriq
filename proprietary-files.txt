@@ -967,6 +967,11 @@ vendor/bin/init.mmi.attest_model.sh
 vendor/etc/init/hw/init.mmi.backup.trustlet.rc
 vendor/etc/init/vendor.mmi.carrier.rc
 
+# MMAgent
+vendor/bin/hw/vendor.mediatek.hardware.mmagent-service
+vendor/etc/init/vendor.mediatek.hardware.mmagent-service.rc
+vendor/lib64/vendor.mediatek.hardware.mmagent-V1-ndk.so
+
 # MMS
 vendor/bin/hw/vendor.mediatek.hardware.mms-service
 vendor/etc/init/vendor.mediatek.hardware.mms-service.rc
