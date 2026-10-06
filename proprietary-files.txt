@@ -866,6 +866,12 @@ product/app/EuiccPartnerApp/EuiccPartnerApp.apk;PRESIGNED
 product/etc/permissions/privapp-permissions-com.google.android.euicc.xml
 product/priv-app/EuiccGoogle/EuiccGoogle.apk;PRESIGNED
 
+# Fingerprint
+vendor/lib64/hw/fingerprint.goodix.default.so
+vendor/lib64/com.motorola.hardware.display.panel-V1-ndk.so
+vendor/lib64/com.motorola.hardware.display.panel@1.0.so
+vendor/lib64/libgf_hal.so
+
 # Gatekeeper
 vendor/bin/hw/android.hardware.gatekeeper-service.trustonic
 vendor/etc/init/android.hardware.gatekeeper-service.trustonic.rc

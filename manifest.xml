@@ -200,4 +200,12 @@
         <name>vendor.tsa.hdcp</name>
         <fqname>IHDCPInterface/default</fqname>
     </hal>
+   <hal format="aidl">
+       <name>com.motorola.hardware.biometric.fingerprint</name>
+       <version>2</version>
+       <interface>
+         <name>IMotoFingerPrint</name>
+         <instance>default</instance>
+       </interface>
+   </hal>
 </manifest>
