@@ -24,6 +24,7 @@ namespace_imports = [
     'device/motorola/lyriq',
     'hardware/mediatek',
     'hardware/mediatek/libmtkperf_client',
+    'hardware/mediatek/libion_mtk',
     'hardware/motorola',
 ]
 

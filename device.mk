@@ -316,6 +316,7 @@ PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH) \
     hardware/motorola \
     hardware/mediatek/libmtkperf_client \
+    hardware/mediatek/libion_mtk \
     hardware/mediatek \
     hardware/google/pixel/pixelstats \
     hardware/google/pixel/power-libperfmgr \
