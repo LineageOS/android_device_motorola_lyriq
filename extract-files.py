@@ -84,6 +84,18 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('android.hardware.camera.common-V2-ndk.so', 'android.hardware.camera.common-V1-ndk.so'),
     'vendor/lib64/libcam.utils.sensorprovider.so': blob_fixup()
         .replace_needed('android.hardware.sensors-V2-ndk.so', 'android.hardware.sensors-V3-ndk.so'),
+    (
+        'vendor/bin/hw/android.hardware.graphics.allocator-V2-service-mediatek',
+        'vendor/lib64/egl/mt6893/libGLES_mali.so',
+        'vendor/lib64/hw/mt6893/android.hardware.graphics.allocator-V2-mediatek.so',
+        'vendor/lib64/hw/mt6893/mapper.mediatek.so',
+        'vendor/lib64/libaimemc.so',
+        'vendor/lib64/libcodec2_fsr.so',
+        'vendor/lib64/libgpud.so',
+        'vendor/lib64/vendor.mediatek.hardware.pq_aidl-V2-ndk.so',
+        'vendor/lib64/vendor.mediatek.hardware.pq_aidl-V4-ndk.so',
+    ): blob_fixup()
+        .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
