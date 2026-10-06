@@ -743,6 +743,12 @@ vendor/etc/vhw.xml
 # Camera firmware
 vendor/firmware/lib3a.ccu
 
+# Charger firmware
+vendor/firmware/cps4038.bin
+vendor/firmware/mm8013c_fw.hex
+vendor/firmware/mm8013c_parameter_0101.hex
+vendor/firmware/mm8013c_parameter_0103.hex
+
 # Display
 vendor/bin/hw/vendor.mediatek.hardware.mmlpq@V1-service 
 vendor/bin/hw/vendor.mediatek.hardware.pq_aidl-service 
