@@ -207,6 +207,10 @@ PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(DEVICE_PATH)/configs/media,$(TARGET_COPY_OUT_VENDOR)/etc)
 
+# MotoActions
+PRODUCT_PACKAGES += \
+    MotoActionsLyriq
+
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc-service.nxp \
