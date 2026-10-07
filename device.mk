@@ -171,7 +171,6 @@ PRODUCT_PACKAGES += \
     init.mt6893.usb.rc \
     init.mt6893.rc \
     init.mtkgki.rc \
-    init.oem.hw.sh \
     init.project.rc \
     init.sensor_2_0.rc \
     ueventd.mt6893.rc \

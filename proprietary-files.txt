@@ -79,6 +79,8 @@ vendor/lib64/libvow_ap_test_vaca_hh.so
 vendor/lib64/libvow_ap_test_vaca_nn.so
 vendor/lib64/libvow_comp_test.so
 vendor/lib64/motorola.hardware.audio.radar2-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so
+vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.2.so
 
 # Audio (Configs)
 vendor/etc/aualgo/aualgo_arp.conf
@@ -993,9 +995,17 @@ vendor/etc/mtk_platform_codecs_config.xml
 vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-extended-seccomp-policy
 vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-mediatek-seccomp-policy
 vendor/etc/vintf/manifest/vendor.dolby.media.c2-default-service-dax.xml:vendor/etc/vintf/manifest/manifest_media_c2_default.xml
+vendor/lib64/AV1SecureVdecCA.so
+vendor/lib64/AVCSecureVdecCA.so
+vendor/lib64/HEVCSecureVdecCA.so
+vendor/lib64/VP9SecureVdecCA.so
+vendor/lib64/libAVCSecureVencCA.so
 vendor/lib64/libbwc.so
-vendor/lib64/libvcodec_oal.so
+vendor/lib64/libmsbc_mtk.so
+vendor/lib64/libvcodec_oal.so;DISABLE_CHECKELF
 vendor/lib64/libvcodecdrv_header_stub.so
+vendor/lib64/libvcodec_utility_v3a.so
+vendor/lib64/libvcodecdrv_v3a.so
 vendor/lib64/libcodec2_fsr.so
 vendor/lib64/libcodec2_mtk_c2store.so
 vendor/lib64/libcodec2_mtk_vdec.so
@@ -1004,11 +1014,13 @@ vendor/lib64/libcodec2_vpp_fa_plugin.so
 vendor/lib64/libcodec2_vpp_mi_plugin.so
 vendor/lib64/libcodec2_vpp_qt_plugin.so
 vendor/lib64/libcodec2_vpp_rs_plugin.so
+vendor/lib64/libgz_gp_client.so
 vendor/lib64/libformatter.so:vendor/lib64/libformatter-mtk.so;FIX_SONAME
 vendor/lib64/mt6893/libmtk_drvb.so;SYMLINK=vendor/lib64/libmtk_drvb.so
 
 # Motorola (scripts)
 vendor/bin/hardware_revisions.sh
+vendor/bin/init.oem.hw.sh
 vendor/bin/init.mmi.attest_model.sh
 vendor/bin/init.mmi.backup.trustlet.sh
 vendor/bin/init.mmi.block_perm.sh
