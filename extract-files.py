@@ -62,6 +62,8 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/libcodec2_mtk_venc.so'
     ): blob_fixup()
         .replace_needed('libformatter.so', 'libformatter-mtk.so'),
+    'vendor/etc/vintf/manifest/manifest_media_c2_default.xml': blob_fixup()
+        .regex_replace(r'\s*<fqname>IComponentStore/default9</fqname>', ''),
     'vendor/bin/hw/android.hardware.audio.service-aidl.mediatek': blob_fixup()
         .replace_needed('android.media.audio.common.types-V5-ndk.so', 'android.media.audio.common.types-V3-ndk.so')
         .replace_needed('libaudio_aidl_conversion_common_ndk.so', 'libaudio_aidl_conversion_common_ndk_prebuilt.so'),
