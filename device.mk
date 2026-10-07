@@ -168,6 +168,7 @@ PRODUCT_PACKAGES += \
     init.mmi.rc \
     init.mmi.overlay.rc \
     init.recovery.mt6893.rc \
+    init.mt6893.usb.rc \
     init.mt6893.rc \
     init.mtkgki.rc \
     init.oem.hw.sh \
