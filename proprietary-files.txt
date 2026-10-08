@@ -768,8 +768,8 @@ vendor/lib64/libconnfem.so
 vendor/bin/hw/android.hardware.graphics.allocator-V2-service-mediatek
 vendor/bin/hw/android.hardware.graphics.composer@3.3-service
 vendor/bin/hw/vendor.mediatek.hardware.gpuserv-service
-vendor/bin/hw/vendor.mediatek.hardware.mmlpq@V1-service 
-vendor/bin/hw/vendor.mediatek.hardware.pq_aidl-service 
+vendor/bin/hw/vendor.mediatek.hardware.mmlpq@V1-service
+vendor/bin/hw/vendor.mediatek.hardware.pq_aidl-service
 vendor/etc/cust_color_0.xml
 vendor/etc/cust_color_1.xml
 vendor/etc/cust_silky_brightness.xml
@@ -783,22 +783,22 @@ vendor/etc/init/android.hardware.graphics.composer@3.3-service.rc
 vendor/etc/init/arm.mali.platform-mediatek.rc
 vendor/etc/init/gpuserv-default.rc
 vendor/etc/init/init.touch.rc
-vendor/etc/init/vendor.mediatek.hardware.pq_aidl-service.rc 
+vendor/etc/init/vendor.mediatek.hardware.pq_aidl-service.rc
 vendor/etc/mali_platform.config
 vendor/etc/pq_flag.xml
 vendor/etc/vintf/manifest/manifest_allocator.xml
 vendor/etc/vintf/manifest/manifest_hwcomposer.xml
 vendor/etc/vintf/manifest/mapper.mediatek.xml
 vendor/firmware/valhall-1691526.wa
-vendor/lib64/egl/libGLES_meow.so 
+vendor/lib64/egl/libGLES_meow.so
 vendor/lib64/egl/libMEOW_data.so
 vendor/lib64/egl/libMEOW_gift.so
-vendor/lib64/egl/libMEOW_qt.so 
-vendor/lib64/egl/libMEOW_trace.so 
+vendor/lib64/egl/libMEOW_qt.so
+vendor/lib64/egl/libMEOW_trace.so
 vendor/lib64/egl/mt6893/libGLES_mali.so;SYMLINK=vendor/lib64/egl/libGLES_mali.so
 vendor/lib64/hw/hwcomposer.mt6893.so
 vendor/lib64/hw/mt6893/android.hardware.graphics.allocator-V2-mediatek.so;SYMLINK=vendor/lib64/hw/android.hardware.graphics.allocator-V2-mediatek.so
-vendor/lib64/hw/mt6893/mapper.mediatek.so;SYMLINK=vendor/lib64/hw/mapper.mediatek.so 
+vendor/lib64/hw/mt6893/mapper.mediatek.so;SYMLINK=vendor/lib64/hw/mapper.mediatek.so
 vendor/lib64/hw/mt6893/vulkan.mali.so;SYMLINK=vendor/lib64/hw/vulkan.mali.so
 vendor/lib64/hw/vendor.mediatek.hardware.pq_aidl-impl.so
 vendor/lib64/libDefaultFpsActor.so
@@ -814,36 +814,36 @@ vendor/lib64/libcomposer_ext.so
 vendor/lib64/libged.so
 vendor/lib64/libgpu_aux.so
 vendor/lib64/libgpud.so
-vendor/lib64/libgralloc_extra.so 
+vendor/lib64/libgralloc_extra.so
 vendor/lib64/libgralloc_metadata.so
 vendor/lib64/libgralloctypes_mtk.so
 vendor/lib64/libminiui.so
 vendor/lib64/libmtkgpuserv.so
-vendor/lib64/libpixelflinger.so 
-vendor/lib64/libpq_cust_base.so 
+vendor/lib64/libpixelflinger.so
+vendor/lib64/libpq_cust_base.so
 vendor/lib64/libpqframework.so
 vendor/lib64/libpqhdrmetaparser.so
 vendor/lib64/libpqsharememory.so
 vendor/lib64/libpqtuning.so
 vendor/lib64/libpqxmlparser.so
 vendor/lib64/librgbwlightsensor.so
-vendor/lib64/libsilkybrightnesscore.so 
-vendor/lib64/mt6893/arm.graphics-V5-ndk.so;SYMLINK=vendor/lib64/arm.graphics-V5-ndk.so 
-vendor/lib64/mt6893/arm.mali.platform-V2-ndk.so;SYMLINK=vendor/lib64/arm.mali.platform-V2-ndk.so 
-vendor/lib64/mt6893/libarm_egl_properties_sysprop.so;SYMLINK=vendor/lib64/libarm_egl_properties_sysprop.so 
-vendor/lib64/mt6893/libarm_gralloc_properties_sysprop.so;SYMLINK=vendor/lib64/libarm_gralloc_properties_sysprop.so 
-vendor/lib64/mt6893/libarm_mali_config_sysprops.so;SYMLINK=vendor/lib64/libarm_mali_config_sysprops.so 
-vendor/lib64/mt6893/libdpframework.so;SYMLINK=vendor/lib64/libdpframework.so 
-vendor/lib64/mt6893/libmml.so;SYMLINK=vendor/lib64/libmml.so 
+vendor/lib64/libsilkybrightnesscore.so
+vendor/lib64/mt6893/arm.graphics-V5-ndk.so;SYMLINK=vendor/lib64/arm.graphics-V5-ndk.so
+vendor/lib64/mt6893/arm.mali.platform-V2-ndk.so;SYMLINK=vendor/lib64/arm.mali.platform-V2-ndk.so
+vendor/lib64/mt6893/libarm_egl_properties_sysprop.so;SYMLINK=vendor/lib64/libarm_egl_properties_sysprop.so
+vendor/lib64/mt6893/libarm_gralloc_properties_sysprop.so;SYMLINK=vendor/lib64/libarm_gralloc_properties_sysprop.so
+vendor/lib64/mt6893/libarm_mali_config_sysprops.so;SYMLINK=vendor/lib64/libarm_mali_config_sysprops.so
+vendor/lib64/mt6893/libdpframework.so;SYMLINK=vendor/lib64/libdpframework.so
+vendor/lib64/mt6893/libmml.so;SYMLINK=vendor/lib64/libmml.so
 vendor/lib64/mt6893/libmmlpqImpl.so;SYMLINK=vendor/lib64/libmmlpqImpl.so
-vendor/lib64/mt6893/libpq_sec.so;SYMLINK=vendor/lib64/libpq_sec.so 
-vendor/lib64/mt6893/libpqparamparser.so;SYMLINK=vendor/lib64/libpqparamparser.so 
-vendor/lib64/vendor.mediatek.hardware.composer_ext-V1-ndk.so 
+vendor/lib64/mt6893/libpq_sec.so;SYMLINK=vendor/lib64/libpq_sec.so
+vendor/lib64/mt6893/libpqparamparser.so;SYMLINK=vendor/lib64/libpqparamparser.so
+vendor/lib64/vendor.mediatek.hardware.composer_ext-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.composer_ext@1.0.so
-vendor/lib64/vendor.mediatek.hardware.mmlpq-V3-ndk.so 
-vendor/lib64/vendor.mediatek.hardware.pq_aidl-V2-ndk.so 
-vendor/lib64/vendor.mediatek.hardware.pq_aidl-V4-ndk.so 
-vendor/lib64/vendor.mediatek.hardware.pq_aidl-V7-ndk.so 
+vendor/lib64/vendor.mediatek.hardware.mmlpq-V3-ndk.so
+vendor/lib64/vendor.mediatek.hardware.pq_aidl-V2-ndk.so
+vendor/lib64/vendor.mediatek.hardware.pq_aidl-V4-ndk.so
+vendor/lib64/vendor.mediatek.hardware.pq_aidl-V7-ndk.so
 
 # Display (Firmware)
 vendor/firmware/boe_goodix_cfg_group.bin
@@ -965,14 +965,14 @@ system_ext/priv-app/MtkTelephonyAssist/MtkTelephonyAssist.apk
 
 # IMS (Vendor)
 vendor/bin/hw/vtservice_aidl
-vendor/bin/mtk_lbs_service 
+vendor/bin/mtk_lbs_service
 vendor/etc/init/init.vtservice_aidl.rc
-vendor/etc/init/mtk_lbs_service.rc 
+vendor/etc/init/mtk_lbs_service.rc
 vendor/etc/vintf/manifest/mtk_lbs_service.xml
-vendor/lib64/hw/vendor.mediatek.hardware.videotelephony-impl.so 
+vendor/lib64/hw/vendor.mediatek.hardware.videotelephony-impl.so
 vendor/lib64/mtk_lbs_service-impl.so
-vendor/lib64/vendor.mediatek.hardware.lbs-V1-ndk.so 
-vendor/lib64/vendor.mediatek.hardware.lbs@1.0.so 
+vendor/lib64/vendor.mediatek.hardware.lbs-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.lbs@1.0.so
 vendor/lib64/vendor.mediatek.hardware.videotelephony-V1-ndk.so;MODULE_SUFFIX=_vendor
 
 # Keymint
@@ -988,6 +988,10 @@ vendor/lib64/libkmsetkey.so
 vendor/bin/init.insmod.sh
 vendor/etc/init.insmod.mt6893.cfg
 
+# Media - from TECNO KM5 AP3A.240905.015.A2/250606V2321:user release-keys
+vendor/bin/v3avpud-64b|74d44c29eec6412b13f0736bff0998d56d63ef6d
+vendor/lib64/libvpudv3a_vcodec.so|ee3c5996df91abfec37a24a775eed36d51708b8a
+
 # Media
 vendor/bin/hw/android.hardware.media.c2-mediatek-64b:vendor/bin/hw/android.hardware.media.c2-mediatek
 vendor/etc/init/android.hardware.media.c2-mediatek.rc
@@ -1001,7 +1005,6 @@ vendor/lib64/HEVCSecureVdecCA.so
 vendor/lib64/VP9SecureVdecCA.so
 vendor/lib64/libAVCSecureVencCA.so
 vendor/lib64/libbwc.so
-vendor/lib64/libmsbc_mtk.so
 vendor/lib64/libvcodec_oal.so;DISABLE_CHECKELF
 vendor/lib64/libvcodecdrv_header_stub.so
 vendor/lib64/libvcodec_utility_v3a.so

@@ -1043,4 +1043,7 @@ service osi /system/bin/osi
     oneshot
     #seclabel u:r:osi:s0
 
-
+service v3avpud-64b /vendor/bin/v3avpud-64b -f
+    class main
+    user media
+    group system media drmrpc
