@@ -1007,8 +1007,8 @@ vendor/lib64/libAVCSecureVencCA.so
 vendor/lib64/libbwc.so
 vendor/lib64/libvcodec_oal.so;DISABLE_CHECKELF
 vendor/lib64/libvcodecdrv_header_stub.so
-vendor/lib64/libvcodec_utility_v3a.so
-vendor/lib64/libvcodecdrv_v3a.so
+vendor/lib64/libvcodec_utility_v3a.so|3e3dc6f64641d415dfb75bc47a529e2352247b0a
+vendor/lib64/libvcodecdrv_v3a.so|403cbf50c012ad1ce1ed321f68e823b5bf2caf9b
 vendor/lib64/libcodec2_fsr.so
 vendor/lib64/libcodec2_mtk_c2store.so
 vendor/lib64/libcodec2_mtk_vdec.so
