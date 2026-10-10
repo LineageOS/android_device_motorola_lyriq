@@ -95,7 +95,6 @@ on late-init
     chown system system /sys/bus/platform/drivers/mtk_nanohub/algo_params
     chmod 0664 /sys/class/drm/card0-DSI-1/panelName
     chown system system /sys/class/drm/card0-DSI-1/panelName
-    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules moto_swap moto_mmap_fault moto_binder
 
 service capsense_reset /vendor/bin/capsense_reset
     class core
