@@ -5,6 +5,7 @@
 #
 
 DEVICE_PATH := device/motorola/lyriq
+KERNEL_PATH := $(DEVICE_PATH)-kernels
 
 # A/B
 AB_OTA_UPDATER := true
@@ -60,20 +61,45 @@ BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_CMDLINE += androidboot.serialconsole=0
 BOARD_KERNEL_CMDLINE += androidboot.bootdevice=11270000.ufshci
 
-TARGET_FORCE_PREBUILT_KERNEL := true
-BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)-kernel/dtb
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)-kernel/dtbo.img
-PRODUCT_COPY_FILES += \
-	$(DEVICE_PATH)-kernel/Image.gz:kernel
+TARGET_KERNEL_DEVICE := mgk_64_k66
+TARGET_KERNEL_DIR := $(KERNEL_PATH)/6.6
+TARGET_KERNEL_PLATFORM_SOURCE := motorola_lyriq
+TARGET_PROVIDES_STATIC_MODULE_LISTS := true
 
-BOARD_SYSTEM_KERNEL_MODULES := $(wildcard $(DEVICE_PATH)-kernel/system/*.ko)
-BOARD_SYSTEM_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)-kernel/modules.load.system))
-BOARD_VENDOR_KERNEL_MODULES := $(wildcard $(DEVICE_PATH)-kernel/vendor/*.ko)
-BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)-kernel/modules.load))
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(wildcard $(DEVICE_PATH)-kernel/ramdisk/*.ko)
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)-kernel/modules.load.ramdisk))
-BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)-kernel/modules.load.recovery))
-BOOT_KERNEL_MODULES := $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD) $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD)
+BOARD_KERNEL_MODULE_DIR := $(TARGET_KERNEL_DIR)
+BOARD_PREBUILT_DTBIMAGE_DIR := $(TARGET_KERNEL_DIR)
+BOARD_PREBUILT_DTBOIMAGE := $(TARGET_KERNEL_DIR)/dtbo.img
+TARGET_PREBUILT_KERNEL := $(TARGET_KERNEL_DIR)/$(BOARD_KERNEL_IMAGE_NAME)
+TARGET_PREBUILT_KERNEL_HEADERS := $(TARGET_KERNEL_DIR)/kernel-uapi-headers.tar.gz
+
+BOARD_SYSTEM_KERNEL_MODULES_LOAD := $(strip $(shell cat $(TARGET_KERNEL_DIR)/system_dlkm.modules.load))
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(TARGET_KERNEL_DIR)/vendor_dlkm.modules.load))
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(TARGET_KERNEL_DIR)/vendor_ramdisk.modules.load))
+BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(TARGET_KERNEL_DIR)/vendor_ramdisk.modules.load.recovery))
+
+ALL_VENDOR_RAMDISK_MODULES := $(sort $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD) $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD))
+BOARD_SYSTEM_KERNEL_MODULES := $(addprefix $(BOARD_KERNEL_MODULE_DIR)/,$(BOARD_SYSTEM_KERNEL_MODULES_LOAD))
+BOARD_VENDOR_KERNEL_MODULES := $(addprefix $(BOARD_KERNEL_MODULE_DIR)/,$(BOARD_VENDOR_KERNEL_MODULES_LOAD))
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(addprefix $(BOARD_KERNEL_MODULE_DIR)/,$(ALL_VENDOR_RAMDISK_MODULES))
+
+BOARD_VENDOR_KERNEL_MODULES += \
+    $(BOARD_KERNEL_MODULE_DIR)/aw862x_v.ko \
+    $(BOARD_KERNEL_MODULE_DIR)/bq25980_mmi.ko \
+    $(BOARD_KERNEL_MODULE_DIR)/cps_wls_charger_4038.ko \
+    $(BOARD_KERNEL_MODULE_DIR)/goodix_brl_u_mmi.ko \
+    $(BOARD_KERNEL_MODULE_DIR)/goodix_fod_mmi_u.ko \
+    $(BOARD_KERNEL_MODULE_DIR)/mm8013c_battery.ko \
+    $(BOARD_KERNEL_MODULE_DIR)/mmi_info.ko \
+    $(BOARD_KERNEL_MODULE_DIR)/mmi_relay.ko \
+    $(BOARD_KERNEL_MODULE_DIR)/moto_chg_tcmd.ko \
+    $(BOARD_KERNEL_MODULE_DIR)/moto_wlc_alg.ko \
+    $(BOARD_KERNEL_MODULE_DIR)/nxp_ese.ko \
+    $(BOARD_KERNEL_MODULE_DIR)/nxp_i2c.ko \
+    $(BOARD_KERNEL_MODULE_DIR)/qpnp_adaptive_charge.ko \
+    $(BOARD_KERNEL_MODULE_DIR)/sensors_class.ko \
+    $(BOARD_KERNEL_MODULE_DIR)/sx937x_sar.ko \
+    $(BOARD_KERNEL_MODULE_DIR)/touchscreen_u_mmi.ko \
+    $(BOARD_KERNEL_MODULE_DIR)/utags.ko
 
 BOARD_MKBOOTIMG_ARGS += \
     --dtb_offset $(BOARD_TAGS_OFFSET) \
@@ -81,9 +107,6 @@ BOARD_MKBOOTIMG_ARGS += \
     --kernel_offset $(BOARD_KERNEL_OFFSET) \
     --ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
     --tags_offset $(BOARD_TAGS_OFFSET)
-
-TARGET_NO_KERNEL_OVERRIDE := true
-TARGET_KERNEL_SOURCE := $(DEVICE_PATH)-kernel/headers/
 
 # Recovery
 TARGET_RECOVERY_UI_MARGIN_HEIGHT := 165
