@@ -7,18 +7,15 @@
 #define LOG_TAG "libudfpshandler"
 
 #include "UdfpsHandler.h"
+#include "mtk_panel_uapi.h"
 
 #include <android-base/logging.h>
 #include <atomic>
-#include <drm/mediatek_drm.h>
+#include <cerrno>
+#include <cstring>
 #include <fcntl.h>
 #include <sys/ioctl.h>
 #include <unistd.h>
-
-#ifdef DRM_IOCTL_SET_PANEL_FEATURE
-#undef DRM_IOCTL_SET_PANEL_FEATURE
-#endif
-#define DRM_IOCTL_SET_PANEL_FEATURE DRM_IOWR(0x9e, struct panel_param_info)
 
 enum HBM_STATE { OFF = 0, ON = 2 };
 
