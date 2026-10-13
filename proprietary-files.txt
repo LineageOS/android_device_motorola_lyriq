@@ -79,8 +79,6 @@ vendor/lib64/libvow_ap_test_vaca_hh.so
 vendor/lib64/libvow_ap_test_vaca_nn.so
 vendor/lib64/libvow_comp_test.so
 vendor/lib64/motorola.hardware.audio.radar2-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so
-vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.2.so
 
 # Audio (Configs)
 vendor/etc/aualgo/aualgo_arp.conf
@@ -233,7 +231,6 @@ vendor/lib64/libbt-vendor.so
 vendor/etc/vintf/manifest/bluetooth_audio.xml:vendor/etc/vintf/manifest/bluetooth_audio_mtk.xml
 vendor/lib64/android.hardware.bluetooth.audio-impl-mediatek.so
 vendor/lib64/libbluetooth_audio_session_aidl_mtk.so
-vendor/lib64/vendor.mediatek.hardware.bluetooth.audio-V1-ndk.so
 
 # Bluetooth (Firmware)
 vendor/firmware/BT_FW.cfg

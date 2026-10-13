@@ -133,6 +133,12 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('AHardwareBuffer_lockPlanes')
         .clear_symbol_version('AHardwareBuffer_release')
         .clear_symbol_version('AHardwareBuffer_unlock'),
+    (
+        'vendor/lib64/hw/audio.primary.mt6893.so',
+        'vendor/lib64/android.hardware.bluetooth.audio-impl-mediatek.so',
+        'vendor/lib64/libbluetooth_audio_session_aidl_mtk.so',
+    ): blob_fixup()
+        .replace_needed('vendor.mediatek.hardware.bluetooth.audio-V1-ndk.so', 'vendor.mediatek.hardware.bluetooth.audio-V3-ndk.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
