@@ -1,0 +1,42 @@
+From 5e3f19ab294c6198f3b149b5c3917d23a1ef9641 Mon Sep 17 00:00:00 2001
+From: Rexix <rexix01@proton.me>
+Date: Tue, 8 Sep 2026 19:46:00 +0200
+Subject: [PATCH 9/9] ImsService: Disable checkinVolteProvision
+
+logImsConfigChangedCheckin calls checkinVolteProvision -> getUserSetting ->
+ImsMmTelManager.createForSubscriptionId(subId).isAdvancedCallingSettingEnabled(),
+which tries to invoke getOpPackageName() on a null Context in AOSP.
+This crashes ImsConfigStub with an uncaught NullPointerException during
+setConfigInt, causing com.android.phone to abort IMS registration.
+
+Disable checkinVolteProvision and logImsConfigChangedCheckin by returning
+early.
+
+---
+ smali/com/mediatek/ims/config/MtkImsConfigImpl.smali | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/smali/com/mediatek/ims/config/MtkImsConfigImpl.smali b/smali/com/mediatek/ims/config/MtkImsConfigImpl.smali
+index e602931a..7b3f9b21 100644
+--- a/smali/com/mediatek/ims/config/MtkImsConfigImpl.smali
++++ b/smali/com/mediatek/ims/config/MtkImsConfigImpl.smali
+@@ -601,6 +601,8 @@
+     .param p3, "retVal"    # I
+ 
+     .line 358
++    return-void
++
+     const/4 v0, 0x0
+ 
+     .line 359
+@@ -1235,6 +1237,8 @@
+     .param p2, "info"    # Ljava/lang/String;
+ 
+     .line 406
++    return-void
++
+     invoke-static {}, Lcom/mediatek/ims/config/CheckinEvent;->isInitialized()Z
+ 
+     move-result v0
+-- 
+2.53.0
