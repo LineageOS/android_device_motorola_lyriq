@@ -439,7 +439,9 @@ ndk::ScopedAStatus Session::onPointerUp(int32_t /*pointerId*/) {
 }
 
 ndk::ScopedAStatus Session::onUiReady() {
-    // TODO: stub
+    if (mUdfpsHandler) {
+        mUdfpsHandler->onUiReady();
+    }
 
     return ndk::ScopedAStatus::ok();
 }

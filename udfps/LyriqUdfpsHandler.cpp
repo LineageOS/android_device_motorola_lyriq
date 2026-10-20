@@ -14,6 +14,8 @@
 #include <cerrno>
 #include <cstring>
 #include <fcntl.h>
+#include <mutex>
+#include <xf86drmMode.h>
 #include <sys/ioctl.h>
 #include <unistd.h>
 
@@ -37,22 +39,44 @@ class LyriqUdfpsHandler : public UdfpsHandler {
     }
 
     void onFingerDown(uint32_t x, uint32_t y, float minor, float major) override {
-        if (mFingerDown.exchange(true)) return;
+        std::lock_guard<std::mutex> lock(mMutex);
+        if (mFingerDown) return;
 
         LOG(INFO) << "Finger down: x=" << x << " y=" << y;
+        mFingerDown = true;
+        mTouch = {x, y, minor, major};
+    }
 
+    void onUiReady() override {
+        std::lock_guard<std::mutex> lock(mMutex);
+        if (!mFingerDown || mScanActive) return;
+
+        if (!waitFor144Hz()) {
+            LOG(ERROR) << "UDFPS display did not reach 144 Hz; skipping capture";
+            return;
+        }
+
+        LOG(INFO) << "UDFPS UI ready at 144 Hz; enabling HBM and starting capture";
         setHbm(true);
+        if (!mHbmActive.load()) {
+            LOG(ERROR) << "HBM did not enable; skipping fingerprint capture";
+            return;
+        }
 
-        sendGoodixExtCmd(241, x, y, minor, major);
+        sendGoodixExtCmd(241, mTouch.x, mTouch.y, mTouch.minor, mTouch.major);
+        mScanActive = true;
     }
 
     void onFingerUp() override {
-        if (!mFingerDown.exchange(false)) return;
+        std::lock_guard<std::mutex> lock(mMutex);
+        if (!mFingerDown) return;
 
         LOG(INFO) << "Finger up";
-
-        sendGoodixExtCmd(242, 0, 0, 0, 0);
-
+        mFingerDown = false;
+        if (mScanActive) {
+            sendGoodixExtCmd(242, 0, 0, 0, 0);
+            mScanActive = false;
+        }
         setHbm(false);
     }
 
@@ -61,28 +85,80 @@ class LyriqUdfpsHandler : public UdfpsHandler {
     }
 
     void onAuthenticationSucceeded() override {
+        std::lock_guard<std::mutex> lock(mMutex);
         LOG(INFO) << "onAuthenticationSucceeded";
-        mFingerDown.store(false);
+        mFingerDown = false;
+        mScanActive = false;
         setHbm(false);
     }
 
     void onAuthenticationFailed() override {
+        std::lock_guard<std::mutex> lock(mMutex);
         LOG(INFO) << "onAuthenticationFailed";
-        mFingerDown.store(false);
+        mFingerDown = false;
+        mScanActive = false;
         setHbm(false);
     }
 
     void cancel() override {
+        std::lock_guard<std::mutex> lock(mMutex);
         LOG(INFO) << "UDFPS cancel";
-        mFingerDown.store(false);
+        mFingerDown = false;
+        mScanActive = false;
         setHbm(false);
     }
 
   private:
+    struct Touch {
+        uint32_t x;
+        uint32_t y;
+        float minor;
+        float major;
+    };
+
     fingerprint_device_t* mDevice = nullptr;
+    std::mutex mMutex;
     std::atomic<bool> mHbmActive{false};
-    std::atomic<bool> mFingerDown{false};
+    bool mFingerDown = false;
+    bool mScanActive = false;
+    Touch mTouch{};
     int mCard0Fd = -1;
+
+    // onUiReady follows the 144 Hz request, but can precede the hardware switch.
+    bool waitFor144Hz() {
+        if (mCard0Fd < 0) {
+            mCard0Fd = open("/dev/dri/card0", O_RDWR);
+            if (mCard0Fd < 0) {
+                LOG(ERROR) << "Failed to open /dev/dri/card0: " << strerror(errno);
+                return false;
+            }
+        }
+
+        for (int attempt = 0; attempt < 75; ++attempt) {
+            bool at144Hz = false;
+            drmModeResPtr resources = drmModeGetResources(mCard0Fd);
+            if (resources) {
+                for (int i = 0; i < resources->count_crtcs; ++i) {
+                    drmModeCrtcPtr crtc = drmModeGetCrtc(mCard0Fd, resources->crtcs[i]);
+                    if (crtc) {
+                        // Lyriq's built-in display is 1080 x 2400.
+                        at144Hz = crtc->mode_valid && crtc->mode.hdisplay == 1080 &&
+                                  crtc->mode.vdisplay == 2400 &&
+                                  crtc->mode.vrefresh >= 143 && crtc->mode.vrefresh <= 145;
+                        drmModeFreeCrtc(crtc);
+                    }
+                    if (at144Hz) break;
+                }
+                drmModeFreeResources(resources);
+            }
+            if (at144Hz) {
+                usleep(8000); // One 144 Hz frame for the panel to settle.
+                return true;
+            }
+            usleep(2000);
+        }
+        return false;
+    }
 
     int sendGoodixExtCmd(int32_t cmd, uint32_t x, uint32_t y, float minor, float major) {
         if (!mDevice) {
