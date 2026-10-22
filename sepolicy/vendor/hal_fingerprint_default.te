@@ -21,3 +21,4 @@ hal_client_domain(hal_fingerprint_default, hal_health)
 r_dir_file(hal_fingerprint_default, sysfs_batteryinfo)
 allow hal_fingerprint_default fingerprint_device:chr_file { open read write ioctl getattr };
 allow hal_fingerprint_default persist_data_file:dir search;
+allow hal_fingerprint_default gpu_device:dir search;
