@@ -4,3 +4,7 @@ r_dir_file(tee, vendor_persist_fingerprint_file)
 binder_use(tee)
 set_prop(tee, vendor_tee_storage_prop)
 allow tee gsi_metadata_file:dir search;
+
+# Acquire suspend blockers through the system suspend service.
+allow tee hal_system_suspend_service:service_manager find;
+binder_call(tee, system_suspend_server)
