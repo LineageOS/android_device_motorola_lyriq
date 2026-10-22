@@ -58,3 +58,9 @@ set_prop(vendor_moto_init_shell, vendor_sku_prop)
 
 # The block permission script only inspects and changes device metadata.
 allow vendor_moto_init_shell block_device:blk_file { getattr setattr };
+
+# hardware revision information.
+allow vendor_moto_init_shell sysfs:dir r_dir_perms;
+r_dir_file(vendor_moto_init_shell, vendor_sysfs_hw_revisions)
+create_dir_file(vendor_moto_init_shell, vendor_hardware_revisions_data_file)
+allow vendor_moto_init_shell vendor_hardware_revisions_data_file:dir create_dir_perms;

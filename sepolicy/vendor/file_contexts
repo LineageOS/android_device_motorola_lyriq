@@ -16,6 +16,9 @@
 /mnt/vendor/persist/goodix(/.*)?                                                            u:object_r:vendor_persist_fingerprint_file:s0
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint-service\.motorola                 u:object_r:hal_fingerprint_default_exec:s0
 
+# Hardware revision
+/data/vendor/hardware_revisions(/.*)? u:object_r:vendor_hardware_revisions_data_file:s0
+
 # Mobicore TEE
 /mnt/vendor/tzapp(/.*)? u:object_r:mnt_vendor_trustlet_file:s0
 /mnt/vendor/persist/mobicore(/.*)?        u:object_r:persist_mobicore_data_file:s0
