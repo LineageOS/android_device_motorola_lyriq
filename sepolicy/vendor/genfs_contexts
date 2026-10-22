@@ -8,6 +8,9 @@ genfscon sysfs /devices/platform/soc/13000000.mali/js_scheduling_period         
 genfscon sysfs /devices/platform/soc/13000000.mali/dvfs_period                                       u:object_r:sysfs_gpu:s0
 
 # Hardware revision
+genfscon sysfs /devices/platform/soc/14116000.dispsys_config/drm/card0/card0-DSI-1/panelName u:object_r:vendor_sysfs_hw_revisions:s0
+genfscon sysfs /devices/platform/soc/14116000.dispsys_config/drm/card0/card0-DSI-1/panelSupplier u:object_r:vendor_sysfs_hw_revisions:s0
+genfscon sysfs /devices/platform/soc/14116000.dispsys_config/drm/card0/card0-DSI-1/panelVer u:object_r:vendor_sysfs_hw_revisions:s0
 genfscon sysfs /ram u:object_r:vendor_sysfs_hw_revisions:s0
 genfscon sysfs /storage u:object_r:vendor_sysfs_hw_revisions:s0
 
