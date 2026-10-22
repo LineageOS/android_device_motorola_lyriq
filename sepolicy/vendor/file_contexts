@@ -19,6 +19,8 @@
 # Mobicore TEE
 /mnt/vendor/tzapp(/.*)? u:object_r:mnt_vendor_trustlet_file:s0
 /mnt/vendor/persist/mobicore(/.*)?        u:object_r:persist_mobicore_data_file:s0
+/dev/block/sdc20 u:object_r:persist_block_device:s0
+/dev/block/sdc(43|69) u:object_r:vendor_tzapp_block_device:s0
 
 # Motobox
 /vendor/bin/motobox    u:object_r:vendor_motobox_exec:s0
