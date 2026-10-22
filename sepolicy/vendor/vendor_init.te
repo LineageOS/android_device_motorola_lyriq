@@ -15,3 +15,5 @@ allow vendor_init nfc_device:chr_file getattr;
 # Configure virtual memory during boot.
 allow vendor_init vendor_proc_vm:file w_file_perms;
 allow vendor_init proc_percpu_pagelist_high_fraction:file w_file_perms;
+
+set_prop(vendor_init, system_mot_prop)
