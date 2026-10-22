@@ -7,6 +7,9 @@ genfscon sysfs /devices/platform/soc/13000000.mali/js_ctx_scheduling_mode       
 genfscon sysfs /devices/platform/soc/13000000.mali/js_scheduling_period                              u:object_r:sysfs_gpu:s0
 genfscon sysfs /devices/platform/soc/13000000.mali/dvfs_period                                       u:object_r:sysfs_gpu:s0
 
+# Health
+genfscon sysfs /devices/platform/soc/11015000.i2c/i2c-0/0-0055/power_supply/bms/type u:object_r:sysfs_batteryinfo:s0
+
 # Input Devices
 genfscon sysfs /devices/virtual/input u:object_r:vendor_sysfs_input:s0
 
