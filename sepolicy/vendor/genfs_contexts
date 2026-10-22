@@ -32,6 +32,8 @@ genfscon sysfs /devices/virtual/touchscreen u:object_r:vendor_sysfs_touchpanel:s
 # Vibrator
 genfscon sysfs /devices/platform/soc/11cb1000.i2c/i2c-9/9-005a/leds/vibrator/state u:object_r:sysfs_vibrator:s0
 genfscon sysfs /devices/platform/soc/11cb1000.i2c/i2c-9/9-005a/leds/vibrator/activate u:object_r:sysfs_vibrator:s0
+genfscon sysfs /devices/platform/soc/11cb1000.i2c/i2c-9/9-005a/leds/vibrator/brightness u:object_r:sysfs_vibrator:s0
+genfscon sysfs /devices/platform/soc/11cb1000.i2c/i2c-9/9-005a/leds/vibrator/duration u:object_r:sysfs_vibrator:s0
 
 # Wakeup (https://lkml.org/lkml/2019/8/6/1275)
 genfscon sysfs /devices/platform/10026000.pwrap/10026000.pwrap:mt6359p/mt6359p-rtc/rtc/rtc0/alarmtimer.5.auto/wakeup u:object_r:sysfs_wakeup:s0
