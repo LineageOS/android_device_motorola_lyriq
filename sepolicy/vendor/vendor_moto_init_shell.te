@@ -55,3 +55,6 @@ allow vendor_moto_init_shell proc_bootprof:file rw_file_perms;
 
 # ro.boot.product.hardware.sku
 set_prop(vendor_moto_init_shell, vendor_sku_prop)
+
+# The block permission script only inspects and changes device metadata.
+allow vendor_moto_init_shell block_device:blk_file { getattr setattr };
