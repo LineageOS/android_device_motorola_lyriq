@@ -33,3 +33,7 @@ ro.vendor.product.hardware.sku.variant u:object_r:vendor_sku_prop:s0
 
 # Touch initialization status
 vendor.hw.touch.status u:object_r:vendor_mot_prop:s0 exact string
+
+# TEE storage readiness
+vendor.mtk.ufs.trustonic.ta.ready u:object_r:vendor_tee_storage_prop:s0 exact string
+vendor.mtk.ufs.gz.com.android.trusty.storage.proxy.ready u:object_r:vendor_tee_storage_prop:s0 exact string

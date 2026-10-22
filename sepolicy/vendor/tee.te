@@ -1,2 +1,6 @@
 # /mnt/vendor/persist/goodix
 r_dir_file(tee, vendor_persist_fingerprint_file)
+
+binder_use(tee)
+set_prop(tee, vendor_tee_storage_prop)
+allow tee gsi_metadata_file:dir search;
