@@ -1,5 +1,5 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
-## are from moto edge 40 (lyriq_g-user 15 V1TLS35.73-60-3-14 89e5f).
+## are from moto edge 40 (lyriq_g-user 15 V1TLS35.73-60-3-16 a1f11f).
 ## variant: RETAIL
 
 # AAL

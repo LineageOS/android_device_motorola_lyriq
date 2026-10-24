@@ -26,5 +26,5 @@ PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceName=lyriq \
-    BuildDesc="lyriq_g-user 15 V1TLS35.73-60-3-14 89e5f release-keys" \
-    BuildFingerprint=motorola/lyriq_g/lyriq:15/V1TLS35.73-60-3-14/89e5f:user/release-keys
+    BuildDesc="lyriq_g-user 15 V1TLS35.73-60-3-16 a1f11f release-keys" \
+    BuildFingerprint=motorola/lyriq_g/lyriq:15/V1TLS35.73-60-3-16/a1f11f:user/release-keys
