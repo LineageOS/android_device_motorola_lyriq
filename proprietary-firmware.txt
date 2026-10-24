@@ -11,7 +11,7 @@ logo.img;AB
 mcupm.img;AB
 md1img.img;AB
 pi_img.img;AB
-preloader.img;AB
+preloader.img;AB|6b5576e2483933a07cca621c6c25279b7fffa61a
 scp.img;AB
 spmfw.img;AB
 sspm.img;AB
