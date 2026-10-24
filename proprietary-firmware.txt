@@ -6,7 +6,7 @@ cam_vpu2.img;AB
 cam_vpu3.img;AB
 dpm.img;AB
 gz.img;AB
-lk.img;AB
+lk.img;AB|f062b4d1efcb486dd220b24636ee5c5dc46e179a
 logo.img;AB
 mcupm.img;AB
 md1img.img;AB
