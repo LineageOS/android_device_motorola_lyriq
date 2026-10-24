@@ -246,6 +246,9 @@ PRODUCT_PACKAGES += \
     EuiccOverlayLyriq \
     NfcOverlayLyriq
 
+PRODUCT_PACKAGES += \
+    LineageApertureOverlayLyriq
+
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
