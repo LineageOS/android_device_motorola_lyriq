@@ -26,11 +26,30 @@ import org.lineageos.settings.device.actions.DozePulse
 import org.lineageos.settings.device.actions.FlipToMute
 import org.lineageos.settings.device.actions.LiftToSilence
 import org.lineageos.settings.device.actions.ProximitySilencer
+import org.lineageos.settings.device.actions.TwistForCamera
 import org.lineageos.settings.device.actions.UpdatedStateNotifier
 
 class MotoActionsService : Service() {
 
     private lateinit var dozePulse: DozePulse
+    private lateinit var twistForCamera: TwistForCamera
+    private lateinit var sharedPrefs: SharedPreferences
+
+    // SharedPreferences keeps only a weak reference to registered listeners.
+    private val prefListener = OnSharedPreferenceChangeListener { _, key ->
+        when (key) {
+            MotoActionsSettings.GESTURE_CHOP_CHOP_KEY,
+            MotoActionsSettings.GESTURE_TWIST_KEY,
+            MotoActionsSettings.GESTURE_IR_WAKEUP_KEY,
+            MotoActionsSettings.GESTURE_PICK_UP_KEY,
+            MotoActionsSettings.GESTURE_POCKET_KEY,
+            MotoActionsSettings.GESTURE_IR_SILENCER_KEY,
+            MotoActionsSettings.GESTURE_FLIP_TO_MUTE_KEY,
+            MotoActionsSettings.GESTURE_LIFT_TO_SILENCE_KEY -> updateState()
+            "turbo_enable",
+            "turbo_current" -> updateChargeCurrent()
+        }
+    }
 
     private val updatedStateNotifiers = mutableListOf<UpdatedStateNotifier>()
 
@@ -39,28 +58,17 @@ class MotoActionsService : Service() {
     override fun onCreate() {
         Log.d(TAG, "Starting")
 
-        val sharedPrefs: SharedPreferences =
+        sharedPrefs =
             PreferenceManager.getDefaultSharedPreferences(this).apply {
-                val prefListener = OnSharedPreferenceChangeListener { _, key ->
-                    when (key) {
-                        MotoActionsSettings.GESTURE_CHOP_CHOP_KEY,
-                        MotoActionsSettings.GESTURE_IR_WAKEUP_KEY,
-                        MotoActionsSettings.GESTURE_PICK_UP_KEY,
-                        MotoActionsSettings.GESTURE_POCKET_KEY,
-                        MotoActionsSettings.GESTURE_IR_SILENCER_KEY,
-                        MotoActionsSettings.GESTURE_FLIP_TO_MUTE_KEY,
-                        MotoActionsSettings.GESTURE_LIFT_TO_SILENCE_KEY -> updateState()
-                        "turbo_enable",
-                        "turbo_current" -> updateChargeCurrent()
-                    }
-                }
                 registerOnSharedPreferenceChangeListener(prefListener)
             }
         val sensorHelper = SensorHelper(this)
 
         dozePulse = DozePulse(this, sharedPrefs, sensorHelper)
+        twistForCamera = TwistForCamera(this, sharedPrefs, sensorHelper)
 
         updatedStateNotifiers.add(dozePulse)
+        updatedStateNotifiers.add(twistForCamera)
         updatedStateNotifiers.add(ChopForTorch(this, sharedPrefs, sensorHelper))
         updatedStateNotifiers.add(ProximitySilencer(this, sharedPrefs, sensorHelper))
         updatedStateNotifiers.add(FlipToMute(this, sharedPrefs, sensorHelper))
@@ -120,6 +128,14 @@ class MotoActionsService : Service() {
     }
 
     override fun onBind(intent: Intent?): IBinder? = null
+
+    override fun onDestroy() {
+        twistForCamera.stop()
+        sharedPrefs.unregisterOnSharedPreferenceChangeListener(prefListener)
+        unregisterReceiver(screenStateReceiver)
+        observer?.stopObserving()
+        super.onDestroy()
+    }
 
     private fun updateState() {
         updatedStateNotifiers.forEach { it.updateState() }

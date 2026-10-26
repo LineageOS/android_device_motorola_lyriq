@@ -12,6 +12,13 @@
         android:key="actions_key">
 
         <SwitchPreferenceCompat
+            android:key="gesture_twist"
+            android:defaultValue="false"
+            android:title="@string/twist_camera_gesture_title"
+            android:summary="@string/twist_camera_gesture_summary"
+            android:icon="@drawable/ic_settings_camera" />
+
+        <SwitchPreferenceCompat
             android:key="gesture_chop_chop"
             android:defaultValue="true"
             android:title="@string/chop_chop_gesture_title"

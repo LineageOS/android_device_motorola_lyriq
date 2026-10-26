@@ -4,6 +4,9 @@
 -->
 <resources>
 
+    <string name="twist_camera_gesture_title">Twist for camera</string>
+    <string name="twist_camera_gesture_summary">Twist your wrist twice to open the camera</string>
+
     <string name="model_number_title">Model number</string>
     <string name="model_number_pref_title">Model number (SKU)</string>
     <string name="carrier_title">Software channel (carrier)</string>

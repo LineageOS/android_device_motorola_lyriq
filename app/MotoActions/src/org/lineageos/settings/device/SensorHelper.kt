@@ -40,17 +40,18 @@ class SensorHelper(private val context: Context) {
     fun getSensor(type: Int): Sensor? =
         sensorMap.getOrPut(type) { sensorManager.getDefaultSensor(type, true) }
 
-    fun registerListener(sensor: Sensor, listener: SensorEventListener) {
-        if (
-            !sensorManager.registerListener(
+    fun registerListener(sensor: Sensor, listener: SensorEventListener): Boolean {
+        val registered =
+            sensorManager.registerListener(
                 listener,
                 sensor,
                 SensorManager.SENSOR_DELAY_NORMAL,
                 BATCH_LATENCY_IN_MS * 1000,
             )
-        ) {
+        if (!registered) {
             Log.e(TAG, "Failed to registerListener for sensor $sensor")
         }
+        return registered
     }
 
     fun unregisterListener(listener: SensorEventListener) {
@@ -61,6 +62,7 @@ class SensorHelper(private val context: Context) {
         private const val TAG = "SensorHelper"
 
         const val SENSOR_TYPE_MMI_CHOP_CHOP = 65546
+        const val SENSOR_TYPE_MMI_CAMERA_ACTIVATE = 65540
         const val SENSOR_TYPE_MMI_FLAT_UP = 65537
         const val SENSOR_TYPE_MMI_FLAT_DOWN = 65538
         const val SENSOR_TYPE_MMI_STOW = 65539
