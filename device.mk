@@ -184,8 +184,8 @@ PRODUCT_COPY_FILES += \
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health-service.example \
-    android.hardware.health-service.example_recovery
+    android.hardware.health-service.mediatek \
+    android.hardware.health-service.mediatek-recovery
 
 # Keymint
 PRODUCT_PACKAGES += \
