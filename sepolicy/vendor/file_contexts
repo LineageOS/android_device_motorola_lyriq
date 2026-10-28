@@ -1,6 +1,3 @@
-# AAL
-/vendor/lib64/libaal_sec\.so u:object_r:same_process_hal_file:s0
-
 # Camera
 /data/vendor/camera(/.*)?                                                              u:object_r:vendor_camera_data_file:s0
 /data/vendor/misc/imager(/.*)?                                                         u:object_r:vendor_imager_data_file:s0
@@ -19,9 +16,6 @@
 # Hardware revision
 /data/vendor/hardware_revisions(/.*)? u:object_r:vendor_hardware_revisions_data_file:s0
 
-# Media
-/vendor/bin/hw/android\.hardware\.media\.c2-mediatek u:object_r:mtk_hal_c2_exec:s0
-
 # Mobicore TEE
 /mnt/vendor/tzapp(/.*)? u:object_r:mnt_vendor_trustlet_file:s0
 /mnt/vendor/persist/mobicore(/.*)?        u:object_r:persist_mobicore_data_file:s0
@@ -30,9 +24,6 @@
 
 # Motobox
 /vendor/bin/motobox    u:object_r:vendor_motobox_exec:s0
-
-# Neural Networks
-/vendor/lib(64)?/libapusys\.so                                                         u:object_r:same_process_hal_file:s0
 
 # Power
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power-service\.pixel-libperfmgr u:object_r:hal_power_default_exec:s0
