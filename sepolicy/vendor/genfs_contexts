@@ -54,9 +54,6 @@ genfscon proc /sys/vm/dirty_bytes u:object_r:proc_dirty:s0
 
 # Wakeup (https://lkml.org/lkml/2019/8/6/1275)
 genfscon sysfs /devices/platform/10026000.pwrap/10026000.pwrap:mt6359p/mt6359p-rtc/rtc/rtc0/alarmtimer.5.auto/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/battery-manager/power_supply/battery/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/charger/power_supply/mtk-mst-hvdiv-chg/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/charger/power_supply/mtk-slv-hvdiv-chg/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/10027000.spmi/spmi-0/0-03/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/10027000.spmi/spmi-0/0-06/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/10027000.spmi/spmi-0/0-07/wakeup u:object_r:sysfs_wakeup:s0
