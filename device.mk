@@ -129,6 +129,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapminfree=8m \
     dalvik.vm.heapmaxfree=48m
 
+# Display
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    sys.brightness.disable_gamma_conversion=true
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
