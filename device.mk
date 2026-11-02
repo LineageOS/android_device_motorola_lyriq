@@ -171,7 +171,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     fstab.mt6893 \
     init.connectivity.rc \
-    init.connectivity.common.rc \
     init.mmi.rc \
     init.mmi.overlay.rc \
     init.recovery.mt6893.rc \
