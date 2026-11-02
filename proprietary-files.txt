@@ -748,7 +748,6 @@ vendor/firmware/mm8013c_parameter_0101.hex
 vendor/firmware/mm8013c_parameter_0103.hex
 
 # Connectivity
-vendor/bin/conninfra_loader
 vendor/etc/init/init.connfem.rc
 vendor/firmware/connfem.cfg
 vendor/firmware/conninfra.cfg

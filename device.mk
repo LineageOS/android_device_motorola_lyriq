@@ -116,6 +116,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     chipinfo
 
+# Connectivity
+PRODUCT_PACKAGES += \
+    conninfra_loader
+
 # Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapstartsize=24m \
@@ -164,7 +168,6 @@ PRODUCT_PACKAGES += \
     fstab.mt6893 \
     init.connectivity.rc \
     init.connectivity.common.rc \
-    init_conninfra.rc \
     init.mmi.rc \
     init.mmi.overlay.rc \
     init.recovery.mt6893.rc \

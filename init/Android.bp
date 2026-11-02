@@ -18,20 +18,6 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init.connectivity.common.rc",
-    src: "init.connectivity.common.rc",
-    relative_install_path: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
-    name: "init_conninfra.rc",
-    src: "init_conninfra.rc",
-    relative_install_path: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
     name: "init.mt6893.power.rc",
     src: "init.mt6893.power.rc",
     relative_install_path: "init/hw",
