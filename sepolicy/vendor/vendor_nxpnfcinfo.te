@@ -1,0 +1,7 @@
+type vendor_nxpnfcinfo, domain;
+type vendor_nxpnfcinfo_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_nxpnfcinfo)
+
+allow vendor_nxpnfcinfo nfc_device:chr_file rw_file_perms;
+set_prop(vendor_nxpnfcinfo, vendor_nfc_prop)
