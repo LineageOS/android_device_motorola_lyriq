@@ -82,11 +82,37 @@ on post-fs-data
     chown root camera /data/vendor/camera_dump
     chmod 0770 /data/vendor/camera_dump
 
-service nxpnfcinfo /system/vendor/bin/nxpnfcinfo
+service nxpnfcinfo /vendor/bin/nxpnfcinfo
     class late_start
     group nfc
     user system
     oneshot
+
+on property:vendor.qti.nfc.chipid=0xca && property:ro.vendor.hw.radio=ROW && property:persist.vendor.nfc.config_file_name=libnfc-nxp-PN560.conf
+    start vendor.nfc_hal_service
+
+on property:vendor.qti.nfc.chipid=0xc1 && property:ro.vendor.hw.radio=ROW && property:persist.vendor.nfc.config_file_name=libnfc-nxp-SN220E.conf
+    start vendor.nfc_hal_service
+
+on property:vendor.qti.nfc.chipid=0xc1 && property:ro.vendor.hw.radio=JAPAN && property:persist.vendor.nfc.config_file_name=libnfc-nxp-SN220P.conf
+    start vendor.nfc_hal_service
+
+service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc-service.nxp
+    override
+    class early_hal
+    user nfc
+    group nfc drmrpc system
+    disabled
+
+on property:ro.vendor.hw.nfc=ese_nq
+    start vendor.secure_element_hal_service
+
+service vendor.secure_element_hal_service /vendor/bin/hw/android.hardware.secure_element-service.nxp
+    override
+    class early_hal
+    user secure_element
+    group secure_element
+    disabled
 
 service vendor.modem-rfs-sh /vendor/bin/init.mmi.modem-rfs.sh loop 600
     class late_start
