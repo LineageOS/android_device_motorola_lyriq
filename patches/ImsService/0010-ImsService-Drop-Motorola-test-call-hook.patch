@@ -1,0 +1,63 @@
+Subject: [PATCH] ImsService: Drop Motorola test call hook
+
+MtkRadioExImsIndication.callInfoIndication invokes
+TelephonyManager.getAndResetInTestEmergencyCall when the last call ends.
+This method is missing from AOSP, causing an uncaught
+NoSuchMethodError and killing com.mediatek.ims during call teardown.
+
+---
+diff --git a/smali/com/mediatek/ims/ril/MtkRadioExImsIndication.smali b/smali/com/mediatek/ims/ril/MtkRadioExImsIndication.smali
+--- a/smali/com/mediatek/ims/ril/MtkRadioExImsIndication.smali
++++ b/smali/com/mediatek/ims/ril/MtkRadioExImsIndication.smali
+@@ -186,50 +186,6 @@
+     .line 842
+     add-int/lit8 v2, v2, -0x1
+ 
+-    .line 843
+-    new-instance v1, Landroid/telephony/TelephonyManager;
+-
+-    iget-object v3, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mRil:Lcom/mediatek/ims/ril/ImsRILAdapter;
+-
+-    iget-object v3, v3, Lcom/mediatek/ims/ril/ImsRILAdapter;->mContext:Landroid/content/Context;
+-
+-    invoke-direct {v1, v3}, Landroid/telephony/TelephonyManager;-><init>(Landroid/content/Context;)V
+-
+-    .line 844
+-    .local v1, "motoExtTM":Landroid/telephony/TelephonyManager;
+-    if-gtz v2, :cond_2
+-
+-    iget v3, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
+-
+-    invoke-virtual {v1, v3}, Landroid/telephony/TelephonyManager;->getAndResetInTestEmergencyCall(I)Z
+-
+-    move-result v3
+-
+-    if-eqz v3, :cond_2
+-
+-    .line 845
+-    iget-object v3, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mRil:Lcom/mediatek/ims/ril/ImsRILAdapter;
+-
+-    iget-object v3, v3, Lcom/mediatek/ims/ril/ImsRILAdapter;->mEnterECBMRegistrants:Landroid/os/RegistrantList;
+-
+-    if-eqz v3, :cond_2
+-
+-    .line 846
+-    iget-object v3, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mRil:Lcom/mediatek/ims/ril/ImsRILAdapter;
+-
+-    const-string v4, "MtkRadioExImsIndication callInfoIndication: call ended, testing emergency call, notify ECM Registrants"
+-
+-    invoke-virtual {v3, v4}, Lcom/mediatek/ims/ril/ImsRILAdapter;->riljLog(Ljava/lang/String;)V
+-
+-    .line 848
+-    iget-object v3, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mRil:Lcom/mediatek/ims/ril/ImsRILAdapter;
+-
+-    iget-object v3, v3, Lcom/mediatek/ims/ril/ImsRILAdapter;->mEnterECBMRegistrants:Landroid/os/RegistrantList;
+-
+-    invoke-virtual {v3}, Landroid/os/RegistrantList;->notifyRegistrants()V
+-
+-    .line 853
+-    .end local v1    # "motoExtTM":Landroid/telephony/TelephonyManager;
+     :cond_2
+     return-void
+ 
+
