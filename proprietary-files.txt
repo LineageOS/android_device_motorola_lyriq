@@ -533,7 +533,6 @@ vendor/lib64/libaiselector.so
 vendor/lib64/libancbase_rt_fusion.so;FIX_SONAME
 vendor/lib64/libapmonitor_vendor.so
 vendor/lib64/libapu_mdw_batch.so
-vendor/lib64/libapusys.so
 vendor/lib64/libarcsoft_portrait_distortion_correction.so
 vendor/lib64/libarcsoft_portrait_super_night_se_raw.so
 vendor/lib64/libarcsoft_super_night_raw.so
@@ -984,17 +983,30 @@ vendor/lib64/libkmsetkey.so
 vendor/bin/init.insmod.sh
 vendor/etc/init.insmod.mt6893.cfg
 
-# Media - from TECNO KM5 AP3A.240905.015.A2/250606V2321:user release-keys
-vendor/bin/v3avpud-64b|74d44c29eec6412b13f0736bff0998d56d63ef6d
-vendor/lib64/libvpudv3a_vcodec.so|ee3c5996df91abfec37a24a775eed36d51708b8a
-
 # Media
 vendor/bin/hw/android.hardware.media.c2-mediatek-64b:vendor/bin/hw/android.hardware.media.c2-mediatek
+vendor/bin/v3avpud
 vendor/etc/init/android.hardware.media.c2-mediatek.rc
+vendor/etc/init/v3avpud.rc
 vendor/etc/mtk_platform_codecs_config.xml
 vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-extended-seccomp-policy
 vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-mediatek-seccomp-policy
 vendor/etc/vintf/manifest/vendor.dolby.media.c2-default-service-dax.xml:vendor/etc/vintf/manifest/manifest_media_c2_default.xml
+vendor/lib/AV1SecureVdecCA.so
+vendor/lib/AVCSecureVdecCA.so
+vendor/lib/HEVCSecureVdecCA.so
+vendor/lib/VP9SecureVdecCA.so
+vendor/lib/libAVCSecureVencCA.so
+vendor/lib/libbwc.so
+vendor/lib/libgz_gp_client.so
+vendor/lib/libvcodec_oal.so;DISABLE_CHECKELF
+vendor/lib/libvcodec_utility_v3a.so
+vendor/lib/libvcodecdrv_v3a.so
+vendor/lib/libvcodecdrv_header_stub.so
+vendor/lib/libgz_uree.so
+vendor/lib/libvpu.so
+vendor/lib/libvpudv3a_vcodec.so
+vendor/lib/mt6893/libmtk_drvb.so;SYMLINK=vendor/lib/libmtk_drvb.so
 vendor/lib64/AV1SecureVdecCA.so
 vendor/lib64/AVCSecureVdecCA.so
 vendor/lib64/HEVCSecureVdecCA.so
@@ -1003,8 +1015,8 @@ vendor/lib64/libAVCSecureVencCA.so
 vendor/lib64/libbwc.so
 vendor/lib64/libvcodec_oal.so;DISABLE_CHECKELF
 vendor/lib64/libvcodecdrv_header_stub.so
-vendor/lib64/libvcodec_utility_v3a.so|3e3dc6f64641d415dfb75bc47a529e2352247b0a
-vendor/lib64/libvcodecdrv_v3a.so|b6c0575d3269ac2882e1daf18efa86302a3bf0f8
+vendor/lib64/libvcodec_utility_v3a.so
+vendor/lib64/libvcodecdrv_v3a.so
 vendor/lib64/libcodec2_fsr.so
 vendor/lib64/libcodec2_mtk_c2store.so
 vendor/lib64/libcodec2_mtk_vdec.so
@@ -1014,6 +1026,7 @@ vendor/lib64/libcodec2_vpp_mi_plugin.so
 vendor/lib64/libcodec2_vpp_qt_plugin.so
 vendor/lib64/libcodec2_vpp_rs_plugin.so
 vendor/lib64/libgz_gp_client.so
+vendor/lib64/libvpu.so
 vendor/lib64/libformatter.so:vendor/lib64/libformatter-mtk.so;FIX_SONAME
 vendor/lib64/mt6893/libmtk_drvb.so;SYMLINK=vendor/lib64/libmtk_drvb.so
 
@@ -1107,10 +1120,12 @@ vendor/etc/vintf/manifest/android.hardware.neuralnetworks-shim-service-mtk.xml
 vendor/etc/vintf/manifest/manifest_apuware_apusys_aidl.xml
 vendor/etc/vintf/manifest/manifest_apuware_utils_aidl.xml
 vendor/etc/vintf/manifest/manifest_apuware_xrp_aidl.xml
+vendor/lib/libapusys.so
 vendor/lib64/APUWareApusysAidlServer.so
 vendor/lib64/APUWareUtilsAidlServer.so
 vendor/lib64/APUWareXrpAidlServer.so
 vendor/lib64/libapu_mdw.so
+vendor/lib64/libapusys.so
 vendor/lib64/libarmnn.so
 vendor/lib64/libarmnn_ndk.mtk.vndk.so
 vendor/lib64/libcmdl.so
