@@ -42,37 +42,37 @@ PRODUCT_PACKAGES += \
 # Audio
 $(call soong_config_set_bool,android_hardware_audio,skip_speaker_layout_channel_mask_field,true)
 PRODUCT_PACKAGES += \
-    audio.primary.default \
-    audio.bluetooth.default \
-    audio_policy.stub \
-    audio.r_submix.default \
-    audio.usb.default
+    audio.primary.default:64 \
+    audio.bluetooth.default:64 \
+    audio_policy.stub:64 \
+    audio.r_submix.default:64 \
+    audio.usb.default:64
 
 # AIDL effect libraries for audio_effects_config.xml
 PRODUCT_PACKAGES += \
-    libaecsw \
-    libagc1sw \
-    libagc2sw \
-    libbassboostsw \
-    libbundleaidl \
-    libdownmixaidl \
-    libdynamicsprocessingaidl \
-    libequalizersw \
-    libextensioneffect \
-    libhapticgeneratoraidl \
-    libloudnessenhanceraidl \
-    libnssw \
-    libpreprocessingaidl \
-    libpresetreverbsw \
-    libreverbaidl \
-    libspatializersw \
-    libvirtualizersw \
-    libvisualizeraidl \
-    libvolumesw
+    libaecsw:64 \
+    libagc1sw:64 \
+    libagc2sw:64 \
+    libbassboostsw:64 \
+    libbundleaidl:64 \
+    libdownmixaidl:64 \
+    libdynamicsprocessingaidl:64 \
+    libequalizersw:64 \
+    libextensioneffect:64 \
+    libhapticgeneratoraidl:64 \
+    libloudnessenhanceraidl:64 \
+    libnssw:64 \
+    libpreprocessingaidl:64 \
+    libpresetreverbsw:64 \
+    libreverbaidl:64 \
+    libspatializersw:64 \
+    libvirtualizersw:64 \
+    libvisualizeraidl:64 \
+    libvolumesw:64
 
 PRODUCT_PACKAGES += \
-    libopus.vendor \
-    audioclient-types-aidl-cpp.vendor
+    libopus.vendor:64 \
+    audioclient-types-aidl-cpp.vendor:64
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_effects_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects_config.xml \
@@ -196,15 +196,15 @@ PRODUCT_PACKAGES += \
 
 # Keymint
 PRODUCT_PACKAGES += \
-    libkeymint.vendor \
-    libpuresoftkeymasterdevice.vendor
+    libkeymint.vendor:64 \
+    libpuresoftkeymasterdevice.vendor:64
 
 # Keystore
 PRODUCT_PACKAGES += \
     android.hardware.hardware_keystore.xml \
     android.system.wifi.keystore@1.0.vendor \
-    libkeystore-wifi-hidl \
-    libkeystore-engine-wifi-hidl
+    libkeystore-wifi-hidl:64 \
+    libkeystore-engine-wifi-hidl:64
 
 # Linker config
 PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \
@@ -308,8 +308,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.multihal \
     android.hardware.sensors@2.0-subhal-impl-1.0 \
-    sensors.dynamic_sensor_hal \
-    sensors.lyriq
+    sensors.dynamic_sensor_hal:64 \
+    sensors.lyriq:64
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
