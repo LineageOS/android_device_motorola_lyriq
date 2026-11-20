@@ -215,6 +215,7 @@ ro.lmk.filecache_min_kb=153600
 debug.stagefright.c2inputsurface=-1
 media.c2.dmabuf.padding=3072
 media.c2.hal.selection=aidl
+vendor.mtk.c2.vdec.vpp.disabled=1
 ro.vendor.jpeg_decode_sw_opt=1
 ro.vendor.mtk_sec_video_path_support=1
 ro.vendor.mtk_tee_gp_support=1
