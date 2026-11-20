@@ -21,3 +21,10 @@ r_dir_file(mtk_hal_camera, sysfs_therm)
 rw_dir_file(mtk_hal_camera, vendor_persist_camera_file)
 
 allow mtk_hal_camera system_data_file:dir search;
+
+# Sensor Service (GyroMV for OIS and PDAF)
+allow mtk_hal_camera fwk_sensor_service:service_manager find;
+binder_call(mtk_hal_camera, system_server)
+binder_call(system_server, mtk_hal_camera)
+allow mtk_hal_camera system_server:fd use;
+
